@@ -15,9 +15,9 @@ const MovieList = (props) => {
     console.log("MOVIES", movies)
   }
 
-  // useEffect(() => {
-  //   callAPI()
-  // }, [])
+  useEffect(() => {
+    callAPI()
+  }, [movies])
 
   const movieCards = movies.map((movie, i) => {
     return <MovieListItem key={i} movie={movie} />
@@ -46,7 +46,7 @@ const MovieList = (props) => {
           Search
         </Button>
       <Grid container spacing={3} justify='space-around'>
-        {movieCards}
+        {title && movieCards}
       </Grid> 
     </section>
   )

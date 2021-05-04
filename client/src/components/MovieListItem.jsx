@@ -21,9 +21,13 @@ const MovieListItem = ({ movie }) => {
   
   const addNomination = (nomination) => {
     console.log("AND THE NOMINEE IS:", nomination)
-    const newNominations = [...nominations].push(nomination)
-    console.log("NOMINATION ADDED =>", newNominations)
-    setNominations(newNominations)
+    if(nominations.length < 1) {
+      setNominations([nomination])
+    } else {
+      const newNominations = nominations.map(nom => nom).push(nomination)
+      setNominations(newNominations)
+    }
+    console.log("NOMINATION ADDED =>", nominations)
   }
 
   const removeNomination = (nomination) => {
