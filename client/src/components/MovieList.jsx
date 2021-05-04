@@ -7,7 +7,7 @@ import axios from 'axios'
 const MovieList = (props) => {
   const [title, setTitle] = useState('')
   const [year, setYear] = useState('')
-  const [movies, setMovies] = useState([{}])
+  const [movies, setMovies] = useState([{Title: "The Hobbit", Year: 2016, Director: "Peter Jackson"}])
 
   const callAPI = async () => {
     const movies = await fetchMovies({title, year})

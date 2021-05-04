@@ -9,17 +9,23 @@ const defaultQuery = {
 }
 
 export const parseQuery = (query) => {
+  console.log(defaultQuery.title)
+  console.log(query.title)
+
   const queryTitle = '&t=' + query.title.split(' ').join('+')
   const queryYear = query.year ? `&y=${query.year}` : ''
 
   return url + queryTitle + queryYear
 }
 
-export const fetchMovies = async (query=defaultQuery) => {
+export const fetchMovies = async (query) => {
   const parsedQuery = parseQuery(query)
 
   try {
     const { data } = await axios.get(parsedQuery)
+
+    console.log("DATA", data)
+
     return data
 
   } catch(error) {
