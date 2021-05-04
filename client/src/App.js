@@ -10,13 +10,15 @@ function App() {
 
 
   return (
-    <NominationContextProvider>
-      <div className="container">
-      <Banner />
-      <MovieList />
-      {isSmallScreen && <InfoButton />}
+    <>
+      <div className="App">
+        <NominationContextProvider>
+          <Banner />
+          <MovieList />
+          {isSmallScreen && <InfoButton />}
+        </NominationContextProvider>
       </div>
-    </NominationContextProvider>
+    </>
   );
 }
 export default App;

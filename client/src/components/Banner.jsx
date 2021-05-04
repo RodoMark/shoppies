@@ -1,5 +1,5 @@
 import React, {useState, useContext} from 'react'
-import NominationContext from '../context/NominationContext'
+import { NominationContext } from '../context/NominationContext'
 
 
 const Banner = () => {

@@ -16,4 +16,4 @@ const NominationContextProvider = (props) => {
   )
 }
 
-export default NominationContext
+export default NominationContextProvider
