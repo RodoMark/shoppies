@@ -1,10 +1,27 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import MovieListItem from './MovieListItem'
+import { fetchMovies, parseQuery } from '../api'
 import { Form, Button, TextField } from '@material-ui/core/';
+import axios from 'axios'
 
 const MovieList = (props) => {
   const [title, setTitle] = useState('')
+  const [movies, setMovies] = useState([{}])
 
+  useEffect(() => {
+    const call_API = async () => {
+      const movies = await fetchMovies()
+      setMovies([movies])
+      console.log("MOVIES", movies)
+    }
+
+    call_API()
+  }, [])
+
+  const movieCards = movies.map(movie => {
+    return <MovieListItem movie={movie} />
+  })
+  
   return(
     <section className="movie-list">
 
@@ -14,7 +31,7 @@ const MovieList = (props) => {
         <Button variant="contained" color="primary" type="submit">
           Search
         </Button>
-      <div>Movie List</div>
+      {movieCards}
     </section>
   )
 }
