@@ -1,19 +1,13 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useReducer } from 'react';
+import AppReducer from './AppReducer'
 
-export const NominationContext = createContext();
-
-const NominationContextProvider = (props) => {
-  const [nominations, setNominations] = useState([])
-
-  const data = {
-    stateNominations: [nominations, setNominations],
-  }
-
-  return (
-    <NominationContext.Provider value={data}>
-      {props.children}
-    </NominationContext.Provider>
-  )
+const initialState = {
+  nominations: [],
 }
 
-export default NominationContextProvider
+export const NominationContext = createContext(initialState);
+
+export default NominationContext = (props) => {
+  const [state, dispatch] = useReducer(AppReducer, initialState);
+
+}
