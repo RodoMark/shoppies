@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react'
 import { Card, CardContent, Typography, Grid, IconButton} from '@material-ui/core'
 import StarIcon from '@material-ui/icons/Star';
+import StarOutlineOutlinedIcon from '@material-ui/icons/StarOutlineOutlined';
 import ShareIcon from '@material-ui/icons/Share';
 
 import { NominationContext } from '../context/NominationContext'
@@ -33,6 +34,7 @@ const MovieListItem = ({ movie }) => {
   }
 
   const handleNomination = () => {
+    console.log("BUTTON CLICKED")
     if(!nominated) {
       setNominated(true)
       setNominations([...nominations, thisMovie])
@@ -45,11 +47,11 @@ const MovieListItem = ({ movie }) => {
   return (
     <Card variant="outlined" item component={Card} xs={12} md={3} className={`movie-card ${nominated && 'movie-card--nominated'}`}>
     <CardContent>
-      <Typography variant="header" gutterBottom>{`Title: ${thisMovie.Title}`}</Typography>
-      <Typography variant="body2">Year: {thisMovie.Year}</Typography>
-      <Typography variant="body2">Director: {thisMovie.Director}</Typography>
-      <IconButton aria-label="add to favorites" onClick={()=> handleNomination}>
-        {nominated ? <StarIcon /> : <StarIcon variant="outlined" />}
+      <Typography variant="header" gutterBottom>{`Title: ${thisMovie.title}`}</Typography>
+      <Typography variant="body2">Year: {thisMovie.year}</Typography>
+      <Typography variant="body2">Director: {thisMovie.director}</Typography>
+      <IconButton aria-label="add to favorites" onClick={()=> handleNomination()}>
+        {nominated ? <StarIcon /> : <StarOutlineOutlinedIcon />}
       </IconButton>
       <IconButton aria-label="share">
         <ShareIcon />
