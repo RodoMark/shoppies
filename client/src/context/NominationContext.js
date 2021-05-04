@@ -2,7 +2,7 @@ import { createContext, useEffect, useReducer } from 'react';
 import AppReducer from './AppReducer'
 
 const initialState = {
-  nominations: [],
+  nominations: localStorage.getItem('nominations') ? JSON.parse(localStorage.getItem('nominations')) : [],
 }
 
 export const NominationContext = createContext(initialState);
