@@ -3,6 +3,7 @@ import axios from 'axios'
 import { fetchMovies, parseQuery } from '../api'
 
 import { TextField } from '@material-ui/core'
+import ResultCard from './ResultCard'
 
 const Add = () => {
   const [title, setTitle] = useState('')
@@ -47,7 +48,11 @@ const Add = () => {
           {results.length > 0 && (
             <ul className="results">
               {results.map(movie => (
-                <li>{movie.Title}</li>
+                <li 
+                  key={movie.imdbID}
+                >
+                  <ResultCard movie={movie} />
+                </li>
               ))}
             </ul>
           ) }
