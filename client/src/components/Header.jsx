@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-export const Header = () => {
+const Header = () => {
   return (
     <header>
       <div className="container">
@@ -15,7 +15,7 @@ export const Header = () => {
                 <Link to="/">Shoppies</Link>
               </li>
               <li>
-                <Link to="/nominated">Nominated</Link>
+                <Link to="/nominations">My Nominations</Link>
               </li>
               <li>
                 <Link to="/add" className="btn">+ Add</Link>
@@ -27,3 +27,5 @@ export const Header = () => {
     </header>
   )
 }
+
+export default Header

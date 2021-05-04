@@ -1,19 +1,37 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useReducer } from 'react';
+import AppReducer from './AppReducer'
 
-export const NominationContext = createContext();
+const initialState = {
+  nominations: localStorage.getItem('nominations') ? JSON.parse(localStorage.getItem('nominations')) : [],
+}
+
+export const NominationContext = createContext(initialState);
 
 const NominationContextProvider = (props) => {
-  const [nominations, setNominations] = useState([])
+  const [state, dispatch] = useReducer(AppReducer, initialState);
 
-  const data = {
-    stateNominations: [nominations, setNominations],
+  useEffect(() => {
+    localStorage.setItem('nominations', JSON.stringify(state.nominations))
+  }, [state])
+
+  // actions
+  const addNomination = (movie) => {
+    dispatch({type: "ADD_NOMINATION", payload: movie})
   }
 
-  return (
-    <NominationContext.Provider value={data}>
-      {props.children}
-    </NominationContext.Provider>
-  )
+  const removeNomination = (movie) => {
+    dispatch({type: "REMOVE_NOMINATION", payload: movie})
+  }
+
+  const data = {
+    nominations: state.nominations,
+    addNomination,
+  }
+
+  return <NominationContext.Provider value={data}>
+    {props.children}
+  </NominationContext.Provider>
+
 }
 
 export default NominationContextProvider
