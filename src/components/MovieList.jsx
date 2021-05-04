@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import MovieListItem from './MovieListItem'
 import { fetchMovies, parseQuery } from '../api'
-import { Form, Button, TextField } from '@material-ui/core/';
+import { Form, Button, TextField, Grid } from '@material-ui/core/';
 import axios from 'axios'
 
 const MovieList = (props) => {
@@ -24,14 +24,15 @@ const MovieList = (props) => {
   
   return(
     <section className="movie-list">
-
       <TextField id="standard-search" label="Movie Title" type="search" />
       <TextField id="standard-search" label="Year" type="search" />
       <TextField id="standard-search" label="Plot Length" type="search" />
         <Button variant="contained" color="primary" type="submit">
           Search
         </Button>
-      {movieCards}
+      <Grid container spacing={3} justify='space-around'>
+        {movieCards}
+      </Grid> 
     </section>
   )
 }
