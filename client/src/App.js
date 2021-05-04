@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import Header from './components/Header'
+import Nominations from './components/Nominations'
 import MovieList from './components/MovieList'
 import Banner from './components/Banner'
 import InfoButton from './components/InfoButton'
