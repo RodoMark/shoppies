@@ -19,6 +19,13 @@ const MovieListItem = ({ movie }) => {
   const { stateNominations } = useContext(NominationContext)
   const [nominations, setNominations] = stateNominations
   
+  const addNomination = (nomination) => {
+    console.log("AND THE NOMINEE IS:", nomination)
+    const newNominations = [...nominations].push(nomination)
+    console.log("NOMINATION ADDED =>", newNominations)
+    setNominations(newNominations)
+  }
+
   const removeNomination = (nomination) => {
     const isMatch = 
     nomination.title === thisMovie.title &&
@@ -28,16 +35,17 @@ const MovieListItem = ({ movie }) => {
     for(let i = 0; i < nominations.length; i++) {
       if(isMatch) {
         const newNominations = [...nominations.splice(i, 1)]
-        return setNominations(newNominations)
+        setNominations(newNominations)
+        console.log("NOMINATION REMOVED =>", nominations)
+        return 
       }
     }
   }
 
   const handleNomination = () => {
-    console.log("BUTTON CLICKED")
     if(!nominated) {
       setNominated(true)
-      setNominations([...nominations, thisMovie])
+      addNomination(thisMovie)
     } else {
       setNominated(false)
       removeNomination(thisMovie)
@@ -45,9 +53,9 @@ const MovieListItem = ({ movie }) => {
   }
 
   return (
-    <Card variant="outlined" item component={Card} xs={12} md={3} className={`movie-card ${nominated && 'movie-card--nominated'}`}>
+    <Card variant="outlined" item="true" component={Card} xs={12} md={3} className={`movie-card ${nominated && 'movie-card--nominated'}`}>
     <CardContent>
-      <Typography variant="header" gutterBottom>{`Title: ${thisMovie.title}`}</Typography>
+      <Typography variant="h3" gutterBottom>{`Title: ${thisMovie.title}`}</Typography>
       <Typography variant="body2">Year: {thisMovie.year}</Typography>
       <Typography variant="body2">Director: {thisMovie.director}</Typography>
       <IconButton aria-label="add to favorites" onClick={()=> handleNomination()}>

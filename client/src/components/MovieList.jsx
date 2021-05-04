@@ -19,8 +19,8 @@ const MovieList = (props) => {
   //   callAPI()
   // }, [])
 
-  const movieCards = movies.map(movie => {
-    return <MovieListItem movie={movie} />
+  const movieCards = movies.map((movie, i) => {
+    return <MovieListItem key={i} movie={movie} />
   })
   
   return(

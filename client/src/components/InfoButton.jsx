@@ -3,7 +3,7 @@ import { Button } from '@material-ui/core'
 
 const InfoButton = () => {
   return (
-    <Button variant='secondary'> More Info</Button>
+    <Button variant='contained'> More Info</Button>
   )
   
 }
