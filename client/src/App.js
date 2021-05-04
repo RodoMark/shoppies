@@ -6,7 +6,7 @@ import Header from './components/Header'
 import Nominations from './components/Nominations'
 import MovieList from './components/MovieList'
 import Banner from './components/Banner'
-import Add from './components/Add'
+import Search from './components/Search'
 import InfoButton from './components/InfoButton'
 import Media, { useMedia } from 'react-media';
 import NominationContextProvider from './context/NominationContext';
@@ -25,15 +25,15 @@ function App() {
 
             <Switch>
               <Route exact path="/">
-                <MovieList />
+                Home Page
               </Route>
 
               <Route path="/nominations">
                 <Nominations />
               </Route>
 
-              <Route path="/add">
-                <Add />
+              <Route path="/search">
+                <Search />
               </Route>
             </Switch>
               {isSmallScreen && <InfoButton />}

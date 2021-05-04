@@ -25,7 +25,7 @@ const Add = () => {
   }, [title, year])
 
   return (
-    <section className="add-page">
+    <section className="search-page">
       <div className="container">
         <article className="add-content">
           <div className="input-wrapper">
@@ -58,7 +58,6 @@ const Add = () => {
           ) }
         </article>
       </div>
-      <h1>Add</h1>
     </section>
   )
 }

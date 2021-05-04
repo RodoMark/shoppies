@@ -31,7 +31,7 @@ const ResultCard = ( {movie} ) => {
           ) : (
             <button 
             className="btn"
-            onClick={() => removeNomination(movie)}
+            onClick={() => removeNomination(movie.imdbID)}
           >Remove From Nominations</button>
           )}
           
