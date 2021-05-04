@@ -9,13 +9,14 @@ const defaultQuery = {
 }
 
 export const parseQuery = (query) => {
+
   const queryTitle = '&t=' + query.title.split(' ').join('+')
   const queryYear = query.year ? `&y=${query.year}` : ''
 
   return url + queryTitle + queryYear
 }
 
-export const fetchMovies = async (query=defaultQuery) => {
+export const fetchMovies = async (query) => {
   const parsedQuery = parseQuery(query)
 
   try {
@@ -26,3 +27,11 @@ export const fetchMovies = async (query=defaultQuery) => {
     console.log(error)
   }
 } 
+
+export const fetchNominations = () => {
+
+}
+
+export const generateID = () => {
+  return (+new Date()).toString(36).slice(-6);
+}

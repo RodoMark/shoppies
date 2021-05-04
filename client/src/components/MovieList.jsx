@@ -7,20 +7,19 @@ import axios from 'axios'
 const MovieList = (props) => {
   const [title, setTitle] = useState('')
   const [year, setYear] = useState('')
-  const [movies, setMovies] = useState([{}])
+  const [movies, setMovies] = useState([{Title: "The Hobbit", Year: 2016, Director: "Peter Jackson"}])
 
   const callAPI = async () => {
     const movies = await fetchMovies({title, year})
     setMovies([movies])
-    console.log("MOVIES", movies)
   }
 
   useEffect(() => {
     callAPI()
-  }, [])
+  }, [title, year, movies])
 
-  const movieCards = movies.map(movie => {
-    return <MovieListItem movie={movie} />
+  const movieCards = movies.map((movie, i) => {
+    return <MovieListItem key={i} movie={movie} movies={movies} />
   })
   
   return(
@@ -46,7 +45,7 @@ const MovieList = (props) => {
           Search
         </Button>
       <Grid container spacing={3} justify='space-around'>
-        {movieCards}
+        {title && movieCards}
       </Grid> 
     </section>
   )
