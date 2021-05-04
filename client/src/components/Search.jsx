@@ -5,8 +5,8 @@ import { fetchMovies, parseQuery } from '../api'
 import { TextField } from '@material-ui/core'
 import ResultCard from './ResultCard'
 
-const Add = () => {
-  const [title, setTitle] = useState('')
+const Search = () => {
+  const [title, setTitle] = useState('Harry')
   const [year, setYear] = useState('')
   const [results, setResults] = useState([]);
 
@@ -14,7 +14,8 @@ const Add = () => {
     const callAPI = async () => {
       try {
         const result = await fetchMovies({title, year})
-      setResults([result])
+        setResults(result.Search)
+        console.log(results)
       } catch(error) {
         setResults([])
       }
@@ -45,7 +46,7 @@ const Add = () => {
             />
           </div>
 
-          {results.length > 0 && (
+          {results.length > 0 ? (
             <ul className="results">
               {results.map(movie => (
                 <li 
@@ -55,11 +56,11 @@ const Add = () => {
                 </li>
               ))}
             </ul>
-          ) }
+          ) : <h1>Start searching to see your results</h1> }
         </article>
       </div>
     </section>
   )
 }
 
-export default Add
+export default Search

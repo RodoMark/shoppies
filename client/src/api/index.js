@@ -10,7 +10,7 @@ const defaultQuery = {
 
 export const parseQuery = (query) => {
 
-  const queryTitle = '&t=' + query.title.split(' ').join('+')
+  const queryTitle = '&s=' + query.title.split(' ').join('+')
   const queryYear = query.year ? `&y=${query.year}` : ''
 
   return url + queryTitle + queryYear
@@ -18,6 +18,7 @@ export const parseQuery = (query) => {
 
 export const fetchMovies = async (query) => {
   const parsedQuery = parseQuery(query)
+  console.log(parsedQuery)
 
   try {
     const { data } = await axios.get(parsedQuery)
@@ -28,9 +29,6 @@ export const fetchMovies = async (query) => {
   }
 } 
 
-export const fetchNominations = () => {
-
-}
 
 export const generateID = () => {
   return (+new Date()).toString(36).slice(-6);
