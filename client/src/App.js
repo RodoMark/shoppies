@@ -5,7 +5,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/Header'
 import Nominations from './components/Nominations'
 import MovieList from './components/MovieList'
-import Banner from './components/Banner'
+import Banner from './components/Banners/Banner'
+import BannerComplete from './components/Banners/BannerComplete'
 import Search from './components/Search'
 import InfoButton from './components/InfoButton'
 import Media, { useMedia } from 'react-media';
