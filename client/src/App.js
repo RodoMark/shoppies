@@ -18,8 +18,6 @@ function App() {
 
 
   return (
-    <>
-      <div className="App">
         <NominationContextProvider>
           <Router>
             <Header />
@@ -43,8 +41,6 @@ function App() {
 
           </Router>
         </NominationContextProvider>
-      </div>
-    </>
   );
 }
 export default App;

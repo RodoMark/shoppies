@@ -5,6 +5,11 @@ export default (state,action) => {
         ...state, 
         nominations: [action.payload, ...state.nominations]
       }
+    case "REMOVE_NOMINATION":
+      return {
+        ...state, 
+        nominations: [action.payload, ...state.nominations]
+      }
     default: 
       return state;
     

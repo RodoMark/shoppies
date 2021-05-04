@@ -1,6 +1,13 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import { NominationContext } from '../context/NominationContext'
 
 const ResultCard = ( {movie} ) => {
+  const { nominations, addNomination, removeNomination } = useContext(NominationContext)
+
+  let nominationMatch = nominations.find(mov => mov.imdbID === movie.imdbID)
+
+  const nominated = nominationMatch ? true : false
+
   return (
     <article className="result-card">
       <div className="poster-wrapper">
@@ -16,7 +23,18 @@ const ResultCard = ( {movie} ) => {
         </div>
 
         <div className="controls">
-          <button className="btn">Add To Nominations</button>
+          {!nominated ? (
+            <button 
+            className="btn"
+            onClick={() => addNomination(movie)}
+          >Add To Nominations</button>
+          ) : (
+            <button 
+            className="btn"
+            onClick={() => removeNomination(movie)}
+          >Remove From Nominations</button>
+          )}
+          
         </div>
       </div>
       
