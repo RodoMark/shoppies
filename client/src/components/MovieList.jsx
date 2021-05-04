@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import MovieListItem from './MovieListItem'
+import MovieListItem from './NominationCard'
 import { fetchMovies, parseQuery } from '../api'
 import { Form, Button, TextField, Grid } from '@material-ui/core/';
 import axios from 'axios'

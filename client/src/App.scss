@@ -219,7 +219,7 @@ header .nav-links li:last-child {
   }
 }
 
-.movie-card {
+.nomination-card {
   width: 100%;
   border-radius: 5px;
   overflow: hidden;
@@ -228,12 +228,12 @@ header .nav-links li:last-child {
   display: block;
 }
 
-.movie-card img {
+.nomination-card img {
   width: 100%;
   display: block;
 }
 
-.movie-card .overlay {
+.nomination-card .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -243,11 +243,11 @@ header .nav-links li:last-child {
   transition: all 0.3s ease;
 }
 
-.movie-card:hover .overlay {
+.nomination-card:hover .overlay {
   border: 3px solid $secondary;
 }
 
-.movie-card .inner-card-controls {
+.nomination-card .inner-card-controls {
   display: inline;
   background-color: red;
   position: absolute;
@@ -261,7 +261,7 @@ header .nav-links li:last-child {
   transition: all 0.3s ease;
 }
 
-.movie-card:hover .inner-card-controls {
+.nomination-card:hover .inner-card-controls {
   opacity: 1;
 }
 
