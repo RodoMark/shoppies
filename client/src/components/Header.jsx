@@ -12,14 +12,12 @@ const Header = () => {
           <nav>
             <ul className="nav-links">
               <li>
-                <Link to="/">Shoppies</Link>
+                <Link to="/search" className="btn">Search</Link>
               </li>
               <li>
-                <Link to="/nominations">My Nominations</Link>
+                <Link to="/nominations">Your Nominations</Link>
               </li>
-              <li>
-                <Link to="/add" className="btn">+ Add</Link>
-              </li>
+
             </ul>
           </nav>
         </div>

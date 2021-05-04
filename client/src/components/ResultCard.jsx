@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import { NominationContext } from '../context/NominationContext'
 
-const ResultCard = ( {movie} ) => {
+const ResultCard = ( { movie } ) => {
   const { nominations, addNomination, removeNomination } = useContext(NominationContext)
 
   let nominationMatch = nominations.find(mov => mov.imdbID === movie.imdbID)
@@ -31,7 +31,7 @@ const ResultCard = ( {movie} ) => {
           ) : (
             <button 
             className="btn"
-            onClick={() => removeNomination(movie)}
+            onClick={() => removeNomination(movie.imdbID)}
           >Remove From Nominations</button>
           )}
           

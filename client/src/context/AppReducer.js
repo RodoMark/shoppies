@@ -8,7 +8,7 @@ export default (state,action) => {
     case "REMOVE_NOMINATION":
       return {
         ...state, 
-        nominations: [action.payload, ...state.nominations]
+        nominations: state.nominations.filter(movie => movie.imdbID !== action.payload)
       }
     default: 
       return state;
