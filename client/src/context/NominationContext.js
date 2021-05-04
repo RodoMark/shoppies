@@ -19,13 +19,14 @@ const NominationContextProvider = (props) => {
     dispatch({type: "ADD_NOMINATION", payload: movie})
   }
 
-  const removeNomination = (movie) => {
-    dispatch({type: "REMOVE_NOMINATION", payload: movie})
+  const removeNomination = (id) => {
+    dispatch({type: "REMOVE_NOMINATION", payload: id})
   }
 
   const data = {
     nominations: state.nominations,
     addNomination,
+    removeNomination,
   }
 
   return <NominationContext.Provider value={data}>
