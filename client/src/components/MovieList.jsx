@@ -15,9 +15,9 @@ const MovieList = (props) => {
     console.log("MOVIES", movies)
   }
 
-  useEffect(() => {
-    callAPI()
-  }, [])
+  // useEffect(() => {
+  //   callAPI()
+  // }, [])
 
   const movieCards = movies.map(movie => {
     return <MovieListItem movie={movie} />
