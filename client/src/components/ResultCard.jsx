@@ -8,6 +8,8 @@ const ResultCard = ( { movie } ) => {
 
   const nominated = nominationMatch ? true : false
 
+  const clickDisabled = nominations.length >= 5 ? true : false
+
   return (
     <article className="result-card">
       <div className="poster-wrapper">
@@ -25,14 +27,15 @@ const ResultCard = ( { movie } ) => {
         <div className="controls">
           {!nominated ? (
             <button 
-            className="btn"
-            onClick={() => addNomination(movie)}
-          >Add To Nominations</button>
+              className="btn"
+              onClick={() => addNomination(movie)}
+              disabled={clickDisabled}
+            >Add To Nominations</button>
           ) : (
             <button 
-            className="btn"
-            onClick={() => removeNomination(movie.imdbID)}
-          >Remove From Nominations</button>
+              className="btn"
+              onClick={() => removeNomination(movie.imdbID)}
+            >Remove From Nominations</button>
           )}
           
         </div>

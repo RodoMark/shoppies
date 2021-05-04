@@ -1,5 +1,6 @@
 import React, {useState, useContext} from 'react'
-import { NominationContext } from '../context/NominationContext'
+import { Link } from 'react-router-dom';
+import { NominationContext } from '../../context/NominationContext'
 
 
 const Banner = () => {
@@ -7,8 +8,9 @@ const Banner = () => {
   
 
   return (
-    <section className="banner">
-      Please select {5 - nominations.length} more movies that you'd like to nominate.
+    <section className="banner banner--complete">
+      
+      
     </section>
   )
   
