@@ -40,13 +40,7 @@ const MovieListItem = ({ movie }) => {
     checkNominations(thisMovie)
   }, [])
   
-  const addNomination = (nomination) => {
-    if(nominations.length < 1) {
-      setNominations([nomination])
-    } else {
-      setNominations([...nominations, nomination])
-    }
-  }
+
 
   const removeNomination = (nomination) => {
     const isMatch = 
