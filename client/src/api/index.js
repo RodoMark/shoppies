@@ -9,8 +9,6 @@ const defaultQuery = {
 }
 
 export const parseQuery = (query) => {
-  console.log(defaultQuery.title)
-  console.log(query.title)
 
   const queryTitle = '&t=' + query.title.split(' ').join('+')
   const queryYear = query.year ? `&y=${query.year}` : ''
@@ -23,12 +21,17 @@ export const fetchMovies = async (query) => {
 
   try {
     const { data } = await axios.get(parsedQuery)
-
-    console.log("DATA", data)
-
     return data
 
   } catch(error) {
     console.log(error)
   }
 } 
+
+export const fetchNominations = () => {
+
+}
+
+export const generateID = () => {
+  return (+new Date()).toString(36).slice(-6);
+}

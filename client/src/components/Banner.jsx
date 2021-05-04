@@ -5,6 +5,7 @@ import NominationContext from '../context/NominationContext'
 const Banner = () => {
   const { stateNominations } = useContext(NominationContext)
   const [nominations, setNominations] = stateNominations
+  
 
   return (
     <section className="banner">
