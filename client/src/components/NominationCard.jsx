@@ -1,4 +1,5 @@
 import React from 'react'
+import CardControls from './CardControls'
 
 const NominationCard = ({ movie }) => {
   
@@ -10,6 +11,8 @@ const NominationCard = ({ movie }) => {
           <img src={movie.Poster} alt={`${movie.Title} Poster`}></img>
         ) : (<div className="filler-poster"></div>)}
       </div>
+
+      <CardControls movie={movie} />
       
     </article>
   )

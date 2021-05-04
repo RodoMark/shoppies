@@ -1,9 +1,14 @@
 import React from 'react'
+import HighlightOff from '@material-ui/icons/HighlightOff'
 
-const CardControls = () => {
+const CardControls = ( { movie }) => {
   return (
-    <div>
-      
+    <div className="inner-card-controls">
+      <>
+        <button className="btn--control">
+          <HighlightOff />
+        </button>
+      </>
     </div>
   )
 }
