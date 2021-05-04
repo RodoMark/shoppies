@@ -12,15 +12,14 @@ const MovieList = (props) => {
   const callAPI = async () => {
     const movies = await fetchMovies({title, year})
     setMovies([movies])
-    console.log("MOVIES", movies)
   }
 
   useEffect(() => {
     callAPI()
-  }, [movies])
+  }, [title, year, movies])
 
   const movieCards = movies.map((movie, i) => {
-    return <MovieListItem key={i} movie={movie} />
+    return <MovieListItem key={i} movie={movie} movies={movies} />
   })
   
   return(
