@@ -4,7 +4,9 @@ import { fetchMovies, parseQuery } from '../api'
 import { debounce } from 'lodash'
 
 import { TextField } from '@material-ui/core'
-import ResultCard from './ResultCard'
+
+import Results from './Results'
+import { CircularProgress } from '@material-ui/core'
 
 const Search = () => {
   const [title, setTitle] = useState('Harry')
@@ -18,8 +20,10 @@ const Search = () => {
         const result = await fetchMovies({title, year})
         setResults(result.Search)
         console.log(results)
+        setLoading(false)
       } catch(error) {
         setResults([{Title: 'Error', Year: 'Data Currently Unavailable'}])
+        
       }
       
     }
@@ -32,6 +36,7 @@ const Search = () => {
   const debounceTitle = useCallback(debounce((title) => setTitle(title), 1000), [])
 
   const handleChange = (event) => {
+    setLoading(true)
     const title = event.target.value
     debounceTitle(title)
   }
@@ -49,18 +54,9 @@ const Search = () => {
               type="search" 
             />
           </div>
-
-          {results ? (
-            <ul className="results">
-              {results.map(movie => (
-                <li 
-                  key={movie.imdbID}
-                >
-                  <ResultCard movie={movie} />
-                </li>
-              ))}
-            </ul>
-          ) : <h1>Start searching to see potential nominees</h1> }
+          <div className="container">
+            {loading ? <CircularProgress /> : <Results results={results} />} 
+          </div>
         </article>
       </div>
     </section>
