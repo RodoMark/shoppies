@@ -2,21 +2,18 @@ import './App.scss';
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import Header from './components/Header'
-import Nominations from './components/Nominations'
-import MovieList from './components/MovieList'
+import Header from './components/Nav/Header'
+import Splash from './components/Nav/Splash'
+import Nominations from './components/Nominations/Nominations'
 import Banner from './components/Banners/Banner'
-import BannerComplete from './components/Banners/BannerComplete'
-import Search from './components/Search'
-import InfoButton from './components/InfoButton'
+import Search from './components/Search/Search'
+
 import Media, { useMedia } from 'react-media';
 import NominationContextProvider from './context/NominationContext';
 
 
 
 function App() {
-  const isSmallScreen = useMedia({ query: "(max-width: 667px)" });
-
 
   return (
         <NominationContextProvider>
@@ -26,7 +23,7 @@ function App() {
 
             <Switch>
               <Route exact path="/">
-                Home Page
+                <Splash />
               </Route>
 
               <Route path="/nominations">
@@ -37,9 +34,6 @@ function App() {
                 <Search />
               </Route>
             </Switch>
-              {isSmallScreen && <InfoButton />}
-        
-
           </Router>
         </NominationContextProvider>
   );

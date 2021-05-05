@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
-import { NominationContext } from '../context/NominationContext'
-import NominationCard from '../components/NominationCard'
+import { NominationContext } from '../../context/NominationContext'
+import NominationCard from './NominationCard'
 
 
 const Nominations = () => {
