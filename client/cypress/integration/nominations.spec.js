@@ -31,6 +31,35 @@ describe("the nominations page", () => {
       .contains('5')
   })
 
+  it("allows for submission when 5 films have been selected", () => {
+    cy.visit('/search')    
+      .get('#film-search')
+      .type('Star')
+      .wait(1200)
+  
+    for(let i = 1; i <= 4; i++) {
+      cy.get(`div.container > ul > li:nth-child(${i})`)
+      .get(`#root > section > div > article > div.container > ul > li:nth-child(${i}) > article > div.info > div.controls > button`)
+      .click()
+      .get(`nav > ul > li:nth-child(1) > section > div`)
+      .contains(`${5 - i}`)
+    }
+    
+    cy.get(`div.container > ul > li:nth-child(5)`)
+      .get(`#root > section > div > article > div.container > ul > li:nth-child(5) > article > div.info > div.controls > button`)
+      .click()
+      .get(`nav > ul > li:nth-child(1) > section > div`)
+      .contains(`submit`)
+      .click()
+
+    cy.get('div.container > h1')
+      .contains('Thank you')
+      .get('div.container > button')
+      .click()
+      .get('nav > ul > li:nth-child(1) > section > div')
+      .contains('5 more')
+
+  })
 
     
 
