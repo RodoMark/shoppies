@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import Banner from '../Banners/Banner'
 
 const Header = () => {
   return (
@@ -11,6 +12,9 @@ const Header = () => {
           </div>
           <nav>
             <ul className="nav-links">
+              <li>
+                <Banner />
+              </li>
               <li>
                 <Link to="/search" className="btn">Search</Link>
               </li>

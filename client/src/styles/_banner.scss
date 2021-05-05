@@ -1,0 +1,13 @@
+@import './variables.scss';
+
+section.banner {
+  
+}
+
+section.banner.banner--secondary {
+  background-color: $secondary;
+}
+
+section.banner.banner--danger {
+  background-color: $danger;
+}

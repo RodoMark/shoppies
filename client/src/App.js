@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/Nav/Header'
 import Splash from './components/Nav/Splash'
 import Nominations from './components/Nominations/Nominations'
-import Banner from './components/Banners/Banner'
+import Submit from './components/Nominations/Submit'
 import Search from './components/Search/Search'
 
 import Media, { useMedia } from 'react-media';
@@ -19,7 +19,6 @@ function App() {
         <NominationContextProvider>
           <Router>
             <Header />
-            <Banner />
 
             <Switch>
               <Route exact path="/">
@@ -33,6 +32,10 @@ function App() {
               <Route path="/search">
                 <Search />
               </Route>
+
+              <Route path="/submit">
+                <Submit />
+              </Route>              
             </Switch>
           </Router>
         </NominationContextProvider>
