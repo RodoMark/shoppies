@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import axios from 'axios'
 import { fetchMovies, parseQuery } from '../api'
+import { debounce } from 'lodash'
 
 import { TextField } from '@material-ui/core'
 import ResultCard from './ResultCard'
@@ -9,6 +10,7 @@ const Search = () => {
   const [title, setTitle] = useState('Harry')
   const [year, setYear] = useState('')
   const [results, setResults] = useState([]);
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     const callAPI = async () => {
@@ -17,7 +19,7 @@ const Search = () => {
         setResults(result.Search)
         console.log(results)
       } catch(error) {
-        setResults([])
+        setResults([{Title: 'Error', Year: 'Data Currently Unavailable'}])
       }
       
     }
@@ -25,28 +27,30 @@ const Search = () => {
     callAPI()
   }, [title, year])
 
+  
+
+  const debounceTitle = useCallback(debounce((title) => setTitle(title), 1000), [])
+
+  const handleChange = (event) => {
+    const title = event.target.value
+    debounceTitle(title)
+  }
+
   return (
     <section className="search-page">
       <div className="container">
         <article className="add-content">
           <div className="input-wrapper">
             <TextField 
-              onChange={(event) => setTitle(event.target.value)}
+              onChange={(event) => handleChange(event)}
               id="film-search" 
               placeholder="Movie Title"
               label="Movie Title" 
               type="search" 
             />
-            <TextField 
-              onChange={(event) => setYear(event.target.value)}
-              id="year-search"
-              placeholder="Year"
-              label="Year" 
-              type="search" 
-            />
           </div>
 
-          {results.length > 0 ? (
+          {results ? (
             <ul className="results">
               {results.map(movie => (
                 <li 
@@ -56,7 +60,7 @@ const Search = () => {
                 </li>
               ))}
             </ul>
-          ) : <h1>Start searching to see your results</h1> }
+          ) : <h1>Start searching to see potential nominees</h1> }
         </article>
       </div>
     </section>
