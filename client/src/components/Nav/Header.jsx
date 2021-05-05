@@ -2,7 +2,9 @@ import React from 'react'
 import { useMedia } from 'react-media'
 
 import Navbar from './Navbar'
-import MobileNavbar from './MobileNavbar'
+import MobileNavbar from './NavbarMobile'
+import Banner from '../Banners/Banner'
+import BannerMobile from '../Banners/BannerMobile'
 
 
 const Header = () => {

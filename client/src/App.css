@@ -59,6 +59,14 @@ header .nav-links li:last-child {
   margin-right: 0;
 }
 
+span.MuiButton-label {
+  color: #F1EDEA;
+}
+
+section.banner {
+  margin-left: 2em;
+}
+
 section.banner.banner--secondary {
   background-color: #2AA8A2;
 }

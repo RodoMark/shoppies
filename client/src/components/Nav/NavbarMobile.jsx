@@ -1,11 +1,13 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom';
 
+import BannerMobile from '../Banners/BannerMobile'
+
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Button from '@material-ui/core/Button';
 
-export default function MobileNav() {
+export default function NavbarMobile() {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -47,6 +49,7 @@ export default function MobileNav() {
         >Nominations</MenuItem>
         
       </Menu>
+      <BannerMobile />
     </nav>
   );
 }
