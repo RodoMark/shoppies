@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import { NominationContext } from '../context/NominationContext'
+import { NominationContext } from '../../context/NominationContext'
 
 const ResultCard = ( { movie } ) => {
   const { nominations, addNomination, removeNomination } = useContext(NominationContext)

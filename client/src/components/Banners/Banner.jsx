@@ -8,7 +8,7 @@ const Banner = () => {
   
 
   return (
-    <section className="banner banner--primary">
+    <section className={`banner ${nominations.length < 5 ? 'banner--primary' : 'banner--complete'}`}>
       {nominations.length < 5 ? `Please select ${5 - nominations.length} more movies that you'd like to nominate.` :
       `You have nominated 5 movies. You may now` }
       {nominations.length >= 5 && <Link to="/submit" className="btn">Submit</Link>}

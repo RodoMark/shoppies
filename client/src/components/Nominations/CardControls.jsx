@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { NominationContext } from '../context/NominationContext'
+import { NominationContext } from '../../context/NominationContext'
 import HighlightOff from '@material-ui/icons/HighlightOff'
 
 const CardControls = ( { movie }) => {
