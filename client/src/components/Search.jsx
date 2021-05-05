@@ -32,14 +32,14 @@ const Search = () => {
           <div className="input-wrapper">
             <TextField 
               onChange={(event) => setTitle(event.target.value)}
-              id="standard-search" 
+              id="film-search" 
               placeholder="Movie Title"
               label="Movie Title" 
               type="search" 
             />
             <TextField 
               onChange={(event) => setYear(event.target.value)}
-              id="standard-search"
+              id="year-search"
               placeholder="Year"
               label="Year" 
               type="search" 
