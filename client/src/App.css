@@ -75,11 +75,11 @@ section.banner.banner--danger {
   background-color: #8A4364;
 }
 
-.movie-page {
+.nomination-page {
   padding: 30px 0;
 }
 
-.movie-page .header {
+.nomination-page .header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -102,7 +102,7 @@ section.banner.banner--danger {
   color: #032541;
 }
 
-.movie-page .heading {
+.nomination-page .heading {
   color: #032541;
   margin: 0;
 }
@@ -168,7 +168,7 @@ section.banner.banner--danger {
   transition: all 0.3s ease;
 }
 
-.movie-page .no-movies {
+.nomination-page .no-movies {
   color: #c4c4c4;
   font-size: 3rem;
   text-align: center;

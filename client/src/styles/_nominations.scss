@@ -1,10 +1,10 @@
 @import './variables.scss';
 
-.movie-page {
+.nomination-page {
   padding: 30px 0;
 }
 
-.movie-page .header {
+.nomination-page .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -21,7 +21,7 @@
   color: $primary;
 }
 
-.movie-page .heading {
+.nomination-page .heading {
   color: $primary;
   margin: 0;
 }
@@ -80,7 +80,7 @@
 
 
 
-.movie-page .no-movies {
+.nomination-page .no-movies {
   color: #c4c4c4;
   font-size: 3rem;
   text-align: center;
