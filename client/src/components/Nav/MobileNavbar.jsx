@@ -19,12 +19,12 @@ export default function MobileNav() {
   const history = useHistory()
 
   return (
-    <div>
-      <Button id="mobile-nav" aria-controls="simple-menu" aria-haspopup="true" onClick={() => handleClick()}>
+    <nav id="nav-mobile">
+      <Button aria-controls="simple-menu" aria-haspopup="true" onClick={(event) => handleClick(event)}>
         Open Menu
       </Button>
       <Menu
-        id="simple-menu"
+        id="nav-mobile-open"
         anchorEl={anchorEl}
         keepMounted
         open={Boolean(anchorEl)}
@@ -34,7 +34,7 @@ export default function MobileNav() {
           handleClose()
           history.push('/')
           }}
-        >Logout</MenuItem>
+        >Home</MenuItem>
         <MenuItem onClick={() => {
           handleClose()
           history.push('/search')
@@ -47,6 +47,6 @@ export default function MobileNav() {
         >Nominations</MenuItem>
         
       </Menu>
-    </div>
+    </nav>
   );
 }

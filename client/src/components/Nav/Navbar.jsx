@@ -14,7 +14,7 @@ const Navbar = () => {
           <Banner />
         </li>
         <li>
-          <Link to="/search" className="btn">Search</Link>
+          <Link to="/search">Search</Link>
         </li>
         <li>
           <Link to="/nominations">Your Nominations</Link>
