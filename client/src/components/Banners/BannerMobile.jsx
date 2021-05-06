@@ -14,7 +14,7 @@ const BannerMobile = () => {
 
   return (
     <section id="banner-mobile" onClick={handleClick} className={`btn banner ${nominations.length < 5 ? 'banner--danger' : 'banner--secondary'}`}>
-      <div className="banner-content">
+      <div id="banner-text" className="banner-content">
         {nominations.length < 5 ? `${nominations.length}/ 5 nominations selected` :
         `Click here to submit` }
       </div>
