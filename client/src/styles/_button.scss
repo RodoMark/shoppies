@@ -3,7 +3,7 @@
   background-color: transparent;
   border: none;
   transition: all 0.3s ease;
-  font-size: 1.25rem;
+  font-size: calc(1.25rem + 0.03vh);
   padding: 5px;
   margin: 0;
 }

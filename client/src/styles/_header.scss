@@ -1,7 +1,7 @@
 @import './variables.scss';
 
 header {
-  background-color: $primary;
+  background-color: $bodyBackground;
   position: fixed;
   top: 0px;
   left: 0px;
@@ -16,8 +16,14 @@ header .inner-content {
   padding: 10px 0;
 }
 
+@media (min-width: $laptopWidth) {
+  .header .inner-content {
+    width: $tabletWidth - 30px;
+  }
+}
+
 header a {
-  color: $white;
+  color: $primary;
   font-size: 1.25rem;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -33,11 +39,23 @@ header .brand a {
 }
 
 header .nav-links {
+  display: flex;
   padding: 0;
   margin: 0;
   list-style: none;
-  display: flex;
   align-items: center;
+}
+
+@media (max-width: $mobileWidth) {
+  #nav-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 1em;
+
+  } & li {
+    padding-top: 0.5em;
+  }
 }
 
 header .nav-links li {
@@ -50,5 +68,12 @@ header .nav-links li:last-child {
 }
 
 span.MuiButton-label {
-  color: $white;
+  color: $primary;
+}
+
+@media (max-width: $mobileWidth) {
+  .header {
+    display: flex;
+    flex-direction: column;
+  }
 }

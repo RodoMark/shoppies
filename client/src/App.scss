@@ -12,6 +12,7 @@ body {
   font-family: "Source Sans Pro", sans-serif;
   padding: 0;
   margin-top: 70px;
+  background-color: $bodyBackground;
 }
 
 .container {
@@ -27,15 +28,15 @@ body {
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: $tabletWidth) {
   .container {
     width: 970px;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $laptopWidth) {
   .container {
-    width: 1170px;
+    width: $tabletWidth - 30px;
   }
 }
 

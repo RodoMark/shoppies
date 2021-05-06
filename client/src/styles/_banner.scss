@@ -2,10 +2,12 @@
 
 section.banner {
   margin-left: 2em;
+  color: $white
 }
 
-section.banner.banner--secondary {
-  background-color: $secondary;
+section.banner.banner--confirm {
+  background-color: $confirm;
+  color: $white;
 }
 
 section.banner.banner--danger {

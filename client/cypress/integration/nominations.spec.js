@@ -93,7 +93,7 @@ describe("the nominations page", () => {
       .click()
       .get('#nav-mobile-open > div.MuiPaper-root.MuiMenu-paper.MuiPopover-paper.MuiPaper-elevation8.MuiPaper-rounded > ul > li:nth-child(1)')
       .click()
-      .get('nav#nav-mobile')
+      .get('div#banner-text.banner-content')
       .contains('0/5')
   })
 
