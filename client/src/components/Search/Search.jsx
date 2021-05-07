@@ -49,7 +49,7 @@ const Search = () => {
             <TextField 
               onChange={(event) => handleChange(event)}
               id="film-search" 
-              placeholder="Search Movies"
+              placeholder="Search"
               type="search" 
             />
           </div>

@@ -12,13 +12,19 @@ const Submit = () => {
     history.push('/search')
   }
   return (
-    <div className="container">
-      <h1>Thank you for submitting your nominations!</h1>
-      <h3>Wanna do it again?</h3>
-      <button onClick={() => handleClick()} className="btn">
-        Click Here!
-      </button>
-    </div>
+    
+      <div className="container">
+        <section className="splash">
+          <h1>Thank you for submitting your nominations!</h1>
+          <h3>Wanna do it again?</h3>
+          <button 
+            style={{width: '30%'}}
+            onClick={() => handleClick()} className="btn">
+            Click Here!
+          </button>
+        </section>
+      </div>
+    
   )
 }
 
