@@ -23,7 +23,7 @@ export default function NavbarMobile() {
   return (
     <nav id="nav-mobile">
       <Button aria-controls="simple-menu" aria-haspopup="true" onClick={(event) => handleClick(event)}>
-        Open Menu
+        Menu
       </Button>
       <Menu
         id="nav-mobile-open"

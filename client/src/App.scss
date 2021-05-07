@@ -5,6 +5,7 @@
 @import './styles/banner.scss';
 @import './styles/stage.scss';
 @import './styles/nominations.scss';
+@import './styles/results.scss';
 @import './styles/button.scss';
 
 
@@ -12,7 +13,7 @@
 body {
   font-family: "Source Sans Pro", sans-serif;
   padding: 0;
-  margin-top: 70px;
+  margin-top: calc(70px + 3vw);
   background-color: $bodyBackground;
 }
 

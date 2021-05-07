@@ -13,10 +13,10 @@ const Banner = () => {
   history.push('/nominations'))
 
   return (
-    <section onClick={handleClick} className={`btn banner ${nominations.length < 5 ? 'banner--danger' : 'banner--confirm'}`}>
+    <section id="banner-standard" onClick={handleClick} className={`btn banner ${nominations.length < 5 ? 'banner--danger' : 'banner--confirm'}`}>
       <div className="banner-content">
-        {nominations.length < 5 ? `Please select ${5 - nominations.length} more that you'd like to nominate.` :
-        `You have nominated 5 movies. Click here to submit` }
+        {nominations.length < 5 ? `${nominations.length}/5 NOMINATED` :
+        `Click here to submit` }
       </div>
       
       

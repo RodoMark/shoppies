@@ -2,8 +2,11 @@
 
 section.banner {
   margin-left: 2em;
-  color: $white
+  color: $white;
+  font-size: calc(0.25em + 3vw);
 }
+
+
 
 section.banner.banner--confirm {
   background-color: $confirm;

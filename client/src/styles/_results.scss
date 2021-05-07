@@ -1,13 +1,7 @@
 @import './variables.scss';
 
-#stage {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-areas: "results space nominations"
-}
-
-input {
-  font-size: calc(400em - 0.3vw);
+input#film-search {
+  font-size: calc(0.25em + 6vw);
 }
 
 .results {

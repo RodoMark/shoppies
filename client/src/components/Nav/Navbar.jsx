@@ -4,12 +4,13 @@ import Banner from '../Banners/Banner'
 
 const Navbar = () => {
   return (
-    <>
-    <div className="brand">
-      <Link to="/">Shoppies</Link>
-    </div>
-    <nav>
+    <nav id="navbar-standard">
+
+    <div>
       <ul className="nav-links">
+        <li>
+          <Link to="/">Shoppies</Link>
+        </li>
         <li>
           <Banner />
         </li>
@@ -20,8 +21,8 @@ const Navbar = () => {
           <Link to="/nominations">Nominations</Link>
         </li>
       </ul>
+    </div>
     </nav>
-    </>
   )
 }
 

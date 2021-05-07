@@ -6,7 +6,7 @@ header {
   top: 0px;
   left: 0px;
   z-index: 3;
-  width: 100%;  
+  width: 100%;
 }
 
 header .inner-content {
@@ -24,7 +24,6 @@ header .inner-content {
 
 header a {
   color: $primary;
-  font-size: 1.25rem;
   text-decoration: none;
   transition: all 0.3s ease;
 }
@@ -40,6 +39,7 @@ header .brand a {
 
 header .nav-links {
   display: flex;
+  justify-content: space-around;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -59,7 +59,7 @@ header .nav-links {
 }
 
 header .nav-links li {
-  display: inline-block;
+  font-size: calc(0.25em + 3vw);
   margin-right: 30px;
 }
 
@@ -76,4 +76,8 @@ span.MuiButton-label {
     display: flex;
     flex-direction: column;
   }
+}
+
+span.MuiButton-label {
+  font-size: calc(2em + 6vw);
 }

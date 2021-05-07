@@ -12,10 +12,8 @@ const Header = () => {
 
   return (
     <header>
-      <div className="container">
         <div className="inner-content">
           {isSmallScreen ? <MobileNavbar /> : <Navbar />}
-        </div>
       </div>
     </header>
   )
