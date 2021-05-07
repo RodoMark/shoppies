@@ -23,7 +23,7 @@ test('#parseQuery: returns string does not contain any spaces', () => {
 });
 
 test('#parseQuery: returns query string that OMDB can process', () => {
-  const expected = `${url}t=2001&y=2001`
+  const expected = `${url}s=2001&y=2001`
   const result = parseQuery(testQuery);
   expect(result).toEqual(expected);
 });

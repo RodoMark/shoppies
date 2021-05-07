@@ -3,17 +3,19 @@ import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Header from './components/Nav/Header'
-import Splash from './components/Nav/Splash'
+import Home from './components/Nav/Home'
 import Nominations from './components/Nominations/Nominations'
 import Submit from './components/Nominations/Submit'
 import Search from './components/Search/Search'
 
-import Media, { useMedia } from 'react-media';
+import useMedia from 'react-media';
 import NominationContextProvider from './context/NominationContext';
 
 
 
 function App() {
+
+  const isSmallScreen = useMedia({ query: "(max-width: 770px)" });
 
   return (
         <NominationContextProvider>
@@ -22,7 +24,7 @@ function App() {
 
             <Switch>
               <Route exact path="/">
-                <Splash />
+                <Home />
               </Route>
 
               <Route path="/nominations">
@@ -30,7 +32,9 @@ function App() {
               </Route>
 
               <Route path="/search">
-                <Search />
+                <div id="stage">
+                  <Search />
+                </div>
               </Route>
 
               <Route path="/submit">

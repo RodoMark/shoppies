@@ -1,0 +1,14 @@
+@import './variables.scss';
+
+#stage {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column; 
+  & .post-wrapper{
+    height: 100px;
+  }
+} 
