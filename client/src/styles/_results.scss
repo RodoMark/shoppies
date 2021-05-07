@@ -1,0 +1,70 @@
+@import './variables.scss';
+
+#stage {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-areas: "results space nominations"
+}
+
+input {
+  font-size: calc(400em - 0.3vw);
+}
+
+.results {
+  grid-area: "results";
+  padding: 0;
+  margin: 0;
+  margin-top: 1em;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.results li {
+  list-style: none;
+  width: 29em;
+  height: 10em;
+  padding-right: 1em;
+  padding-bottom: 0.5em;
+}
+
+.result-card {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.result-card .poster-wrapper img,
+.filler-poster {
+  width: 100px;
+  height: 150px;
+  background-color: #dbdada;
+  border-radius: 5px;
+  margin-right: 15px;
+  display: block;
+  color: transparent;
+}
+
+.result-card .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.result-card .info .title {
+  font-size: 1.25rem;
+  color: $primary;
+  font-weight: 600;
+  margin: 0;
+}
+
+.result-card .info .year {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: $primary;
+  margin: 0;
+}
+
+.result-card .controls button {
+  margin-right: 10px;
+}
+
