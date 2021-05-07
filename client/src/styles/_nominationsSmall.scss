@@ -1,0 +1,49 @@
+@import './variables.scss';
+
+.nominations--small li {
+  list-style: none;
+}
+
+.nominations--smallg {
+  display: flex;
+}
+
+.nomination-card--small {
+  width: calc(3rem + 8vw);
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  border: 0;
+  display: block;
+}
+
+.nomination-card--small img {
+  width: 100%;
+  display: block;
+}
+
+.nomination-card--small .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.nomination-card--small:hover .overlay {
+  border: 3px solid $secondary;
+}
+
+.nomination-card--small .inner-card-controls {
+  background-color: red;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+

@@ -4,7 +4,7 @@ import CardControls from './CardControls'
 const NominationCard = ({ movie, type }) => {
   
   return (
-    <article className={`nomination-card ${type === 'small' ? 'nomination-card--small' : null}`}>
+    <article className={`${type === 'small' ? 'nomination-card--small' : 'nomination-card'}`}>
       <div className="overlay"></div>
       <div className="poster-wrapper">
         {movie.Poster ? (
