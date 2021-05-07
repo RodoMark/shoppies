@@ -13,7 +13,7 @@ const NominationsSmall = ( { results }) => {
           <li 
             key={movie.imdbID}
           >
-            <NominationCard type="nomination-card--small" movie={movie} />
+            <NominationCard type="small" movie={movie} />
           </li>
         ))}
       </ul>

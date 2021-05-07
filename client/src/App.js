@@ -34,6 +34,7 @@ function App() {
               <Route path="/search">
                 <div id="stage">
                   <Search />
+                  <Nominations type="small"/>
                 </div>
               </Route>
 

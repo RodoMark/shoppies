@@ -3,7 +3,7 @@ import { NominationContext } from '../../context/NominationContext'
 import NominationCard from './NominationCard'
 
 
-const Nominations = ({ cards }) => {
+const Nominations = ({ type }) => {
   const { nominations } = useContext(NominationContext)
 
   return (
