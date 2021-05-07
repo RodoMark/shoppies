@@ -1,0 +1,14 @@
+.btn--control {
+  color: #fefefe;
+  background-color: transparent;
+  border: none;
+  transition: all 0.3s ease;
+  font-size: calc(1.25rem + 0.03vh);
+  padding: 5px;
+  margin: 0;
+}
+
+.btn--control:hover {
+  color: $secondary;
+  cursor: pointer;
+}

@@ -30,12 +30,12 @@ const ResultCard = ( { movie } ) => {
               className="btn"
               onClick={() => addNomination(movie)}
               disabled={clickDisabled}
-            >Add To Nominations</button>
+            >Add Nomination</button>
           ) : (
             <button 
               className="btn"
               onClick={() => removeNomination(movie.imdbID)}
-            >Remove From Nominations</button>
+            >Remove Nomination</button>
           )}
           
         </div>

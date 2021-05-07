@@ -23,10 +23,15 @@ const NominationContextProvider = (props) => {
     dispatch({type: "REMOVE_NOMINATION", payload: id})
   }
 
+  const clearNominations = () => {
+    dispatch({type: "CLEAR_NOMINATIONS"})
+  }
+
   const data = {
     nominations: state.nominations,
     addNomination,
     removeNomination,
+    clearNominations,
   }
 
   return <NominationContext.Provider value={data}>

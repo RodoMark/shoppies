@@ -1,0 +1,18 @@
+@import './variables.scss';
+
+section.banner {
+  margin-left: 2em;
+  color: $white;
+  font-size: calc(0.25em + 3vw);
+}
+
+
+
+section.banner.banner--confirm {
+  background-color: $confirm;
+  color: $white;
+}
+
+section.banner.banner--danger {
+  background-color: $danger;
+}

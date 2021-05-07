@@ -1,26 +1,19 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { useMedia } from 'react-media'
+
+import Navbar from './Navbar'
+import MobileNavbar from './NavbarMobile'
+import Banner from '../Banners/Banner'
+import BannerMobile from '../Banners/BannerMobile'
+
 
 const Header = () => {
+  const isSmallScreen = useMedia({ query: "(max-width: 770px)" });
+
   return (
     <header>
-      <div className="container">
         <div className="inner-content">
-          <div className="brand">
-            <Link to="/">Shoppies</Link>
-          </div>
-          <nav>
-            <ul className="nav-links">
-              <li>
-                <Link to="/search" className="btn">Search</Link>
-              </li>
-              <li>
-                <Link to="/nominations">Your Nominations</Link>
-              </li>
-
-            </ul>
-          </nav>
-        </div>
+          {isSmallScreen ? <MobileNavbar /> : <Navbar />}
       </div>
     </header>
   )

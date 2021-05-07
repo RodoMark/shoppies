@@ -7,7 +7,7 @@ const Nominations = () => {
   const { nominations } = useContext(NominationContext)
 
   return (
-    <section className="movie-page">
+    <section className="nomination-page">
       <div className="container">
         <div className="header">
           <h1 className="heading">Your Nominations</h1>
