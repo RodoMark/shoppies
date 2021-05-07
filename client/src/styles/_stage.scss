@@ -1,4 +1,23 @@
 @import './variables.scss';
 
+section.splash {
+  color: $white;
+  background: $confirm; 
+  display: flex;
+  flex-direction: column;
+  padding: 10vh calc(0.5em + 3vw);
+  font-size: calc(0.4em + 1vw);
+  & ul > li {
+    list-style: none;
+  }
+}
+
+@media (max-width: $mobileWidth) {
+  section.splash{
+    font-size: calc(0.1em + 4vw);
+  }
+  
+}
+
 
 

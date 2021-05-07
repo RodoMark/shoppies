@@ -2,8 +2,8 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <section className="splash">
       <div className="container">
+        <section className="stage splash">
         <h1>WELCOME TO SHOPPIES</h1>
         <h2>You can search for your favourite films and nominate them for the upcoming Shoppies Awards</h2>
         <h2>Tech Stack:</h2>
@@ -14,8 +14,8 @@ const Home = () => {
           <li>API: OMDB(Movie info)</li>
           <li>DevOps: git, GitHub</li>
         </ul>
+        </section>
       </div>
-    </section>
   )
 }
 
