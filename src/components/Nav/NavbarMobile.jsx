@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom';
 
 import BannerMobile from '../Banners/BannerMobile'
@@ -9,12 +9,15 @@ import Button from '@material-ui/core/Button';
 
 export default function NavbarMobile() {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [menuDisplay, setMenuDisplay] = useState(true)
 
   const handleClick = (event) => {
+    setMenuDisplay(false)
     setAnchorEl(event.currentTarget);
   };
 
   const handleClose = () => {
+    setMenuDisplay(true)
     setAnchorEl(null);
   };
 
@@ -46,7 +49,7 @@ export default function NavbarMobile() {
           handleClose()
           history.push('/nominations')
           }}
-        >Nominations</MenuItem>
+        >My Nominations</MenuItem>
         
       </Menu>
       <BannerMobile />

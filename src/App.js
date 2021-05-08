@@ -18,6 +18,10 @@ function App() {
 
   const isSmallScreen = useMedia({ query: "(max-width: 770px)" });
 
+  useEffect(()=> {
+    return
+  },[isSmallScreen])
+
   return (
         <NominationContextProvider>
           <Router>
@@ -34,8 +38,8 @@ function App() {
 
               <Route path="/search">
                 <div id="stage">
+                  {!isSmallScreen && <NominationsSmall/>}
                   <Search />
-                  <NominationsSmall/>
                 </div>
               </Route>
 

@@ -21,15 +21,18 @@ header .inner-content {
   padding: 10px 0;
 }
 
-@media (min-width: 1200px) {
-  .header .inner-content {
+@media (max-width: 1200px) {
+  div.inner-content {
     width: 962px;
+    display: initial;
+  }
+  section.banner {
+    margin: 0;
   }
 }
 
 header a {
   color: #64943E;
-  font-size: 1.25rem;
   text-decoration: none;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -48,6 +51,8 @@ header .nav-links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -68,6 +73,9 @@ header .nav-links {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     padding-bottom: 1em;
   }
   li {
@@ -76,7 +84,7 @@ header .nav-links {
 }
 
 header .nav-links li {
-  display: inline-block;
+  font-size: calc(0.25em + 3vw);
   margin-right: 30px;
 }
 
@@ -86,6 +94,10 @@ header .nav-links li:last-child {
 
 span.MuiButton-label {
   color: #64943E;
+}
+
+#nav-mobile-open > div.MuiPaper-root.MuiMenu-paper.MuiPopover-paper.MuiPaper-elevation8.MuiPaper-rounded > ul > li {
+  font-size: calc(1.25em + 3vw);
 }
 
 @media (max-width: 540px) {
@@ -100,14 +112,20 @@ span.MuiButton-label {
   }
 }
 
+span.MuiButton-label {
+  font-size: calc(2em + 6vw);
+}
+
 section.banner {
   margin-left: 2em;
   color: #F1EDEA;
+  font-size: calc(0.25em + 3vw);
 }
 
 section.banner.banner--confirm {
   background-color: #004C3F;
   color: #F1EDEA;
+  font-size: calc(0.2em + 2vw);
 }
 
 section.banner.banner--danger {
@@ -115,15 +133,43 @@ section.banner.banner--danger {
 }
 
 #stage {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0.3fr 0.9fr;
+      grid-template-columns: 0.3fr 0.9fr;
+  grid-gap: 1em;
 }
 
-.sidebar {
+@media (max-width: 992px) {
+  #stage {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 4fr;
+        grid-template-columns: 1fr 4fr;
+    grid-gap: 0.5em;
+  }
+}
+
+@media (max-width: 540px) {
+  #stage {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media (max-width: 540px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+section.splash {
+  color: #F1EDEA;
+  background: #004C3F;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -131,10 +177,18 @@ section.banner.banner--danger {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding: 10vh calc(0.5em + 3vw);
+  font-size: calc(0.4em + 1vw);
 }
 
-.sidebar .post-wrapper {
-  height: 100px;
+section.splash ul > li {
+  list-style: none;
+}
+
+@media (max-width: 540px) {
+  section.splash {
+    font-size: calc(0.1em + 4vw);
+  }
 }
 
 .nomination-page {
@@ -174,6 +228,8 @@ section.banner.banner--danger {
   display: grid;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
   grid-gap: 30px;
 }
 
@@ -236,115 +292,105 @@ section.banner.banner--danger {
   text-align: center;
 }
 
-.btn--control {
-  color: #fefefe;
-  background-color: transparent;
-  border: none;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  font-size: calc(1.25rem + 0.03vh);
-  padding: 5px;
-  margin: 0;
+.nomination-card--small {
+  width: 10%;
 }
 
-.btn--control:hover {
-  color: #FFE7AD;
-  cursor: pointer;
+.nominations--small {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: fit-content(20%) (1fr)[5];
+      grid-template-rows: fit-content(20%) repeat(5 1fr);
 }
 
-body {
-  font-family: "Source Sans Pro", sans-serif;
-  padding: 0;
-  margin-top: 70px;
-  background-color: #FBF7ED;
+.nominations--small li {
+  list-style: none;
 }
 
-.container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    width: 962px;
-  }
-}
-
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.btn {
-  padding: 10px 15px;
-  background-color: #FFE7AD;
-  color: #64943E;
+.nomination-card--small {
+  margin-bottom: 1em;
+  width: calc(5rem + 5vw);
   border-radius: 5px;
-  text-transform: uppercase;
-  font-weight: 700;
-  display: inline-block;
-  border: none;
-  font-size: 1rem;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  line-height: 1.1;
+  overflow: hidden;
+  position: relative;
+  border: 0;
+  display: block;
 }
 
-.btn:hover {
-  background-color: #1aa762;
-  opacity: 1;
-  cursor: pointer;
-}
-
-.btn:disabled {
-  pointer-events: none;
-  opacity: 0.5;
-}
-
-input:focus {
-  outline: none;
-}
-
-/* Header Styles */
-/* Add Page */
-.add-content {
-  padding: 50px 0;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.add-content .input-wrapper input {
+.nomination-card--small img {
   width: 100%;
-  padding: 10px;
+  display: block;
+}
+
+.nomination-card--small .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.nomination-card--small:hover .overlay {
+  border: 3px solid #FFE7AD;
+}
+
+.nomination-card--small .inner-card-controls {
+  background-color: red;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  background: rgba(0, 0, 0, 0.8);
   border-radius: 5px;
-  border: none;
-  font-size: 1.25rem;
+  opacity: 0.7;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+input#film-search {
+  font-size: calc(0.25em + 6vw);
 }
 
 .results {
   padding: 0;
   margin: 0;
   margin-top: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+ul.results {
+  position: absolute;
+  width: calc(35em + 8vw);
+}
+
+@media (min-width: 992px) {
+  .results ul {
+    position: absolute;
+    width: calc(35em + 8vw);
+  }
+}
+
+@media (min-width: 540px) {
+  .results ul {
+    position: initial;
+  }
 }
 
 .results li {
   list-style: none;
+  width: 20em;
+  height: 10em;
+  padding-right: 1em;
+  padding-bottom: 0.5em;
 }
 
 .result-card {
@@ -394,5 +440,94 @@ input:focus {
 
 .result-card .controls button {
   margin-right: 10px;
+}
+
+.btn--control {
+  color: #FFE7AD;
+  background-color: transparent;
+  border: none;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  font-size: calc(1.25rem + 0.03vh);
+  padding: 5px;
+  margin: 0;
+}
+
+.btn--control:hover {
+  color: #FFE7AD;
+  cursor: pointer;
+}
+
+button.MuiButtonBase-root {
+  margin-left: 1.5em;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  padding: 0;
+  margin-top: calc(70px + 3vw);
+  background-color: #FBF7ED;
+}
+
+@media (max-width: 540px) {
+  body {
+    margin-top: calc(96px + 6vw);
+  }
+}
+
+.container {
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.btn {
+  padding: 10px 15px;
+  background-color: #FFE7AD;
+  color: #64943E;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  border: none;
+  font-size: 1rem;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  line-height: 1.1;
+}
+
+.btn:hover {
+  background-color: #1aa762;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+input:focus {
+  outline: none;
+}
+
+/* Header Styles */
+/* Add Page */
+.add-content {
+  max-width: 600px;
+}
+
+.add-content .input-wrapper input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.25rem;
 }
 /*# sourceMappingURL=App.css.map */

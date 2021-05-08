@@ -1,15 +1,22 @@
 @import './variables.scss';
 
+.nominations--small {
+  display: grid;
+  grid-template-rows: fit-content(20%) repeat(5 1fr);
+  
+}
+
+
+
 .nominations--small li {
   list-style: none;
 }
 
-.nominations--small {
-  display: flex;
-}
+
 
 .nomination-card--small {
-  width: calc(3rem + 8vw);
+  margin-bottom: 1em;
+  width: calc(5rem + 5vw);
   border-radius: 5px;
   overflow: hidden;
   position: relative;

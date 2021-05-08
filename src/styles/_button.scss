@@ -1,5 +1,5 @@
 .btn--control {
-  color: #fefefe;
+  color: $secondary;
   background-color: transparent;
   border: none;
   transition: all 0.3s ease;
@@ -11,4 +11,8 @@
 .btn--control:hover {
   color: $secondary;
   cursor: pointer;
+}
+
+button.MuiButtonBase-root {
+  margin-left: 1.5em;
 }
