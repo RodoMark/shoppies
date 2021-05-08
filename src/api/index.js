@@ -18,7 +18,6 @@ export const parseQuery = (query) => {
 
 export const fetchMovies = async (query) => {
   const parsedQuery = parseQuery(query)
-  console.log(parsedQuery)
 
   try {
     const { data } = await axios.get(parsedQuery)
