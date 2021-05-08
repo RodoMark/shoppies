@@ -16,9 +16,14 @@ header .inner-content {
   padding: 10px 0;
 }
 
-@media (min-width: $laptopWidth) {
-  .header .inner-content {
+@media (max-width: $laptopWidth) {
+  div.inner-content {
     width: $tabletWidth - 30px;
+    display: initial;
+  }
+
+  section.banner {
+    margin: 0;
   }
 }
 
@@ -51,6 +56,7 @@ header .nav-links {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: flex-start;
     padding-bottom: 1em;
 
   } & li {
@@ -72,7 +78,7 @@ span.MuiButton-label {
 }
 
 #nav-mobile-open > div.MuiPaper-root.MuiMenu-paper.MuiPopover-paper.MuiPaper-elevation8.MuiPaper-rounded > ul > li {
-  font-size: calc(1em + 3vw);
+  font-size: calc(1.25em + 3vw);
 }
 
 

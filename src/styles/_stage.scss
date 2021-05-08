@@ -6,9 +6,24 @@
   grid-gap: 1em;
 }
 
+@media (max-width: $tabletWidth) {
+  #stage {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-gap: 0.5em;
+  }
+}
+
 @media (max-width: $mobileWidth) {
   #stage {
     display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: $mobileWidth) {
+  .sidebar {
+    display: none;
   }
 }
 

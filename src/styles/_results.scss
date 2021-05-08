@@ -13,9 +13,19 @@ input#film-search {
   flex-wrap: wrap;
 }
 
-.results ul {
+
+ul.results {
   position: absolute;
+  width: calc(35em + 8vw);
 }
+
+@media (min-width: $tabletWidth) {
+  .results ul {
+    position: absolute;
+    width: calc(35em + 8vw);
+  }
+}
+
 
 @media (min-width: $mobileWidth) {
   .results ul {
@@ -38,8 +48,8 @@ input#film-search {
 
 .result-card .poster-wrapper img,
 .filler-poster {
-  width: 100px;
-  height: 150px;
+  width: 75px;
+  height: 113px;
   background-color: #dbdada;
   border-radius: 5px;
   margin-right: 15px;
@@ -70,4 +80,16 @@ input#film-search {
 .result-card .controls button {
   margin-right: 10px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 

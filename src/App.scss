@@ -19,7 +19,7 @@ body {
 
 @media (max-width: $mobileWidth) {
   body{
-    margin-top: calc(150px + 21vw);
+    margin-top: calc(96px + 6vw);
   }
 }
 
@@ -27,24 +27,6 @@ body {
   padding-right: 1em;
   padding-left: 1em;
 }
-
-// @media (min-width: 768px) {
-//   .container {
-//     width: 750px;
-//   }
-// }
-
-// @media (min-width: $tabletWidth) {
-//   .container {
-//     width: 970px;
-//   }
-// }
-
-// @media (min-width: $laptopWidth) {
-//   .container {
-//     width: $tabletWidth - 30px;
-//   }
-// }
 
 *,
 *:before,
@@ -97,53 +79,5 @@ input:focus {
   font-size: 1.25rem;
 }
 
-.results {
-  padding: 0;
-  margin: 0;
-  margin-top: 1em;
-}
 
-.results li {
-  list-style: none;
-}
-
-.result-card {
-  display: flex;
-  margin-bottom: 20px;
-}
-
-.result-card .poster-wrapper img,
-.filler-poster {
-  width: 75px;
-  height: 113px;
-  background-color: #dbdada;
-  border-radius: 5px;
-  margin-right: 15px;
-  display: block;
-  color: transparent;
-}
-
-.result-card .info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.result-card .info .title {
-  font-size: 1.25rem;
-  color: $primary;
-  font-weight: 600;
-  margin: 0;
-}
-
-.result-card .info .year {
-  font-size: 1.25rem;
-  font-weight: 300;
-  color: $primary;
-  margin: 0;
-}
-
-.result-card .controls button {
-  margin-right: 10px;
-}
 

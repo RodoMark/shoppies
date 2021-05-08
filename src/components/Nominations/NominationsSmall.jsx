@@ -7,7 +7,7 @@ const NominationsSmall = () => {
 
   return (
     nominations.length > 0 ? 
-    <div className="container">
+    <div className="container sidebar">
       <ul className="nominations--small">
         {nominations.map(movie => (
           <li 

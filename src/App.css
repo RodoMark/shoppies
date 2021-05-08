@@ -21,9 +21,13 @@ header .inner-content {
   padding: 10px 0;
 }
 
-@media (min-width: 1200px) {
-  .header .inner-content {
+@media (max-width: 1200px) {
+  div.inner-content {
     width: 962px;
+    display: initial;
+  }
+  section.banner {
+    margin: 0;
   }
 }
 
@@ -69,6 +73,9 @@ header .nav-links {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     padding-bottom: 1em;
   }
   li {
@@ -90,7 +97,7 @@ span.MuiButton-label {
 }
 
 #nav-mobile-open > div.MuiPaper-root.MuiMenu-paper.MuiPopover-paper.MuiPaper-elevation8.MuiPaper-rounded > ul > li {
-  font-size: calc(1em + 3vw);
+  font-size: calc(1.25em + 3vw);
 }
 
 @media (max-width: 540px) {
@@ -118,6 +125,7 @@ section.banner {
 section.banner.banner--confirm {
   background-color: #004C3F;
   color: #F1EDEA;
+  font-size: calc(0.2em + 2vw);
 }
 
 section.banner.banner--danger {
@@ -132,11 +140,30 @@ section.banner.banner--danger {
   grid-gap: 1em;
 }
 
+@media (max-width: 992px) {
+  #stage {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 4fr;
+        grid-template-columns: 1fr 4fr;
+    grid-gap: 0.5em;
+  }
+}
+
 @media (max-width: 540px) {
   #stage {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media (max-width: 540px) {
+  .sidebar {
+    display: none;
   }
 }
 
@@ -270,22 +297,10 @@ section.splash ul > li {
 }
 
 .nominations--small {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-@media (max-width: 540px) {
-  .nominations--small {
-    display: none;
-  }
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: fit-content(20%) (1fr)[5];
+      grid-template-rows: fit-content(20%) repeat(5 1fr);
 }
 
 .nominations--small li {
@@ -294,7 +309,7 @@ section.splash ul > li {
 
 .nomination-card--small {
   margin-bottom: 1em;
-  width: calc(12rem);
+  width: calc(5rem + 5vw);
   border-radius: 5px;
   overflow: hidden;
   position: relative;
@@ -352,8 +367,16 @@ input#film-search {
       flex-wrap: wrap;
 }
 
-.results ul {
+ul.results {
   position: absolute;
+  width: calc(35em + 8vw);
+}
+
+@media (min-width: 992px) {
+  .results ul {
+    position: absolute;
+    width: calc(35em + 8vw);
+  }
 }
 
 @media (min-width: 540px) {
@@ -379,8 +402,8 @@ input#film-search {
 
 .result-card .poster-wrapper img,
 .filler-poster {
-  width: 100px;
-  height: 150px;
+  width: 75px;
+  height: 113px;
   background-color: #dbdada;
   border-radius: 5px;
   margin-right: 15px;
@@ -435,6 +458,10 @@ input#film-search {
   cursor: pointer;
 }
 
+button.MuiButtonBase-root {
+  margin-left: 1.5em;
+}
+
 body {
   font-family: "Source Sans Pro", sans-serif;
   padding: 0;
@@ -444,7 +471,7 @@ body {
 
 @media (max-width: 540px) {
   body {
-    margin-top: calc(150px + 21vw);
+    margin-top: calc(96px + 6vw);
   }
 }
 
@@ -502,64 +529,5 @@ input:focus {
   border-radius: 5px;
   border: none;
   font-size: 1.25rem;
-}
-
-.results {
-  padding: 0;
-  margin: 0;
-  margin-top: 1em;
-}
-
-.results li {
-  list-style: none;
-}
-
-.result-card {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-bottom: 20px;
-}
-
-.result-card .poster-wrapper img,
-.filler-poster {
-  width: 75px;
-  height: 113px;
-  background-color: #dbdada;
-  border-radius: 5px;
-  margin-right: 15px;
-  display: block;
-  color: transparent;
-}
-
-.result-card .info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.result-card .info .title {
-  font-size: 1.25rem;
-  color: #64943E;
-  font-weight: 600;
-  margin: 0;
-}
-
-.result-card .info .year {
-  font-size: 1.25rem;
-  font-weight: 300;
-  color: #64943E;
-  margin: 0;
-}
-
-.result-card .controls button {
-  margin-right: 10px;
 }
 /*# sourceMappingURL=App.css.map */

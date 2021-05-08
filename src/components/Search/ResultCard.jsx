@@ -1,6 +1,7 @@
 import React, {useContext} from 'react'
 import { NominationContext } from '../../context/NominationContext'
 
+
 const ResultCard = ( { movie } ) => {
   const { nominations, addNomination, removeNomination } = useContext(NominationContext)
 
@@ -28,14 +29,22 @@ const ResultCard = ( { movie } ) => {
           {!nominated ? (
             <button 
               className="btn"
-              onClick={() => addNomination(movie)}
+              onClick={(event) => {
+                addNomination(movie)
+                event.currentTarget.blur()
+              }
+            }
               disabled={clickDisabled}
             >Add Nomination</button>
           ) : (
             <button 
               className="btn"
-              onClick={() => removeNomination(movie.imdbID)}
-            >Remove Nomination</button>
+              onClick={(event) => {
+                removeNomination(movie.imdbID)
+                event.currentTarget.blur()
+                }
+              }
+            >Remove</button>
           )}
           
         </div>
