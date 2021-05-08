@@ -32,7 +32,7 @@ section.splash {
   background: $confirm; 
   display: flex;
   flex-direction: column;
-  padding: 10vh calc(0.5em + 3vw);
+  padding: 5vh calc(0.5em + 3vw);
   font-size: calc(0.4em + 1vw);
   & ul > li {
     list-style: none;
