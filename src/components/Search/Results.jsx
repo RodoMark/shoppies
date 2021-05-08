@@ -4,6 +4,7 @@ import ResultCard from './ResultCard'
 const Results = ( { results }) => {
   return (
     results ? 
+    <div className="container">
       <ul className="results">
         {results.map(movie => (
           <li 
@@ -12,7 +13,12 @@ const Results = ( { results }) => {
             <ResultCard movie={movie} />
           </li>
         ))}
-      </ul> : ''
+      </ul>
+    </div> 
+      
+      : 
+      
+      null
   ) 
 }
 

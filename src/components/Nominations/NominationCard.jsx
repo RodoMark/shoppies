@@ -1,10 +1,10 @@
 import React from 'react'
 import CardControls from './CardControls'
 
-const NominationCard = ({ movie }) => {
+const NominationCard = ({ movie, type }) => {
   
   return (
-    <article className="nomination-card">
+    <article className={`${type === 'small' ? 'nomination-card--small' : 'nomination-card'}`}>
       <div className="overlay"></div>
       <div className="poster-wrapper">
         {movie.Poster ? (

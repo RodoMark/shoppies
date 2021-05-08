@@ -3,7 +3,7 @@ import { NominationContext } from '../../context/NominationContext'
 import NominationCard from './NominationCard'
 
 
-const Nominations = () => {
+const Nominations = ({ type }) => {
   const { nominations } = useContext(NominationContext)
 
   return (
@@ -15,7 +15,7 @@ const Nominations = () => {
 
         <div className="movie-grid">
           {nominations.length > 0 && nominations.map(movie => (
-            <NominationCard key={movie.imdbID} movie={movie} />
+            <NominationCard type="large" key={movie.imdbID} movie={movie} />
           )) }
         </div>
          

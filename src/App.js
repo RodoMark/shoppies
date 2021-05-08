@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/Nav/Header'
 import Home from './components/Nav/Home'
 import Nominations from './components/Nominations/Nominations'
+import NominationsSmall from './components/Nominations/NominationsSmall'
 import Submit from './components/Nominations/Submit'
 import Search from './components/Search/Search'
 
@@ -23,7 +24,7 @@ function App() {
             <Header />
 
             <Switch>
-              <Route path="/">
+              <Route exact path="/">
                 <Home />
               </Route>
 
@@ -34,6 +35,7 @@ function App() {
               <Route path="/search">
                 <div id="stage">
                   <Search />
+                  <NominationsSmall/>
                 </div>
               </Route>
 

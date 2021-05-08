@@ -1,5 +1,10 @@
 @import './variables.scss';
 
+#stage {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 section.splash {
   color: $white;
   background: $confirm; 
@@ -16,7 +21,6 @@ section.splash {
   section.splash{
     font-size: calc(0.1em + 4vw);
   }
-  
 }
 
 

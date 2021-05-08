@@ -71,6 +71,11 @@ span.MuiButton-label {
   color: $primary;
 }
 
+#nav-mobile-open > div.MuiPaper-root.MuiMenu-paper.MuiPopover-paper.MuiPaper-elevation8.MuiPaper-rounded > ul > li {
+  font-size: calc(1em + 3vw);
+}
+
+
 @media (max-width: $mobileWidth) {
   .header {
     display: flex;

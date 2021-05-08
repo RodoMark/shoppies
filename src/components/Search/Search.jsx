@@ -53,9 +53,9 @@ const Search = () => {
               type="search" 
             />
           </div>
-          <div className="container">
-            {loading ? <CircularProgress /> : <Results results={results} />} 
-          </div>
+          
+          {loading ? <CircularProgress /> : <Results results={results} />} 
+          
         </article>
       </div>
     </section>
