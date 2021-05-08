@@ -21,7 +21,7 @@ const NominationsSmall = () => {
       
       : 
       
-      null
+      <div className="container"></div>
   ) 
 }
 

@@ -24,10 +24,8 @@ body {
 }
 
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+  padding-right: 1em;
+  padding-left: 1em;
 }
 
 // @media (min-width: 768px) {
@@ -89,7 +87,6 @@ input:focus {
 /* Add Page */
 .add-content {
   max-width: 600px;
-  margin: 0 auto;
 }
 
 .add-content .input-wrapper input {

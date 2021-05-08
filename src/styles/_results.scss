@@ -13,6 +13,11 @@ input#film-search {
   flex-wrap: wrap;
 }
 
+.results ul {
+  position: absolute;
+}
+
+
 .results li {
   list-style: none;
   width: 20em;
