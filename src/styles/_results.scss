@@ -17,6 +17,11 @@ input#film-search {
   position: absolute;
 }
 
+@media (min-width: $mobileWidth) {
+  .results ul {
+    position: initial;
+  }
+}
 
 .results li {
   list-style: none;
