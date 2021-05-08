@@ -12,12 +12,14 @@ export const parseQuery = (query) => {
 
   const queryTitle = '&s=' + query.title.split(' ').join('+')
   const queryYear = query.year ? `&y=${query.year}` : ''
+  const mediaType = '&type=Movie'
 
-  return url + queryTitle + queryYear
+  return url + queryTitle + queryYear + mediaType
 }
 
 export const fetchMovies = async (query) => {
   const parsedQuery = parseQuery(query)
+  console.log(parsedQuery)
 
   try {
     const { data } = await axios.get(parsedQuery)
