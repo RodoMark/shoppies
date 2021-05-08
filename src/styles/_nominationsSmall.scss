@@ -1,15 +1,19 @@
 @import './variables.scss';
 
+.nominations--small {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
 .nominations--small li {
   list-style: none;
 }
 
-.nominations--small {
-  display: flex;
-}
+
 
 .nomination-card--small {
-  width: calc(3rem + 8vw);
+  width: calc(12rem);
   border-radius: 5px;
   overflow: hidden;
   position: relative;
