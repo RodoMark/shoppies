@@ -3,7 +3,13 @@
 .nominations--small {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
+}
+
+@media (max-width: $mobileWidth) {
+  .nominations--small {
+    display: none;
+  }
 }
 
 .nominations--small li {
@@ -13,6 +19,7 @@
 
 
 .nomination-card--small {
+  margin-bottom: 1em;
   width: calc(12rem);
   border-radius: 5px;
   overflow: hidden;
