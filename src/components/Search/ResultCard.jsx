@@ -13,7 +13,7 @@ const ResultCard = ( { movie } ) => {
   const clickDisabled = nominations.length >= 5 ? true : false
 
   return (
-    <article className="result-card" >
+    <article className={`result-card movie-key-${movie.imdbID}`} >
       {displayInfo && <MovieInfo movie={movie} />}
       <div className="poster-wrapper">
         {movie.Poster ? (

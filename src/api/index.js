@@ -8,17 +8,18 @@ const defaultQuery = {
   plotLength: null
 }
 
-export const parseQuery = (query) => {
+export const parseQuery = (query, multiple=true) => {
+  const search = multiple ? '&s=' : '&t='  
 
-  const queryTitle = '&s=' + query.title.split(' ').join('+')
+  const queryTitle = search + query.title.split(' ').join('+')
   const queryYear = query.year ? `&y=${query.year}` : ''
   const mediaType = '&type=Movie'
 
   return url + queryTitle + queryYear + mediaType
 }
 
-export const fetchMovies = async (query) => {
-  const parsedQuery = parseQuery(query)
+export const fetchMovies = async (query, multiple=true) => {
+  const parsedQuery = parseQuery(query, multiple)
   console.log(parsedQuery)
 
   try {

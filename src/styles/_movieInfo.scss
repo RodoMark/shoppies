@@ -16,7 +16,33 @@
 .splash--movie-info {
   width: 50%;
   margin-left: auto;
-  margin-right: auto;
-  
+  margin-right: auto;  
+}
+
+.movie-info--detailed {
+  display: grid;
+  grid-template-areas: "post post head"
+                       "post post head"
+                       "post post body"
+                       "plot plot plot"
+                       "plot plot plot"
+                       "plot plot plot"
+                       "plot plot plot"
+}
+
+.header {
+  grid-area: head;
+}
+
+.body {
+  grid-area: body;
+}
+
+.poster-wrapper {
+  grid-area: post;
+}
+
+.plot {
+  grid-area: plot;
 }
 
