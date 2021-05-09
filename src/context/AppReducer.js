@@ -14,7 +14,12 @@ export default (state,action) => {
       return {
         ...state, 
         nominations: []
-      }      
+      }
+    case "SHOW_INFO":
+      return {
+        ...state, 
+        nominations: []
+      } 
     default: 
       return state;
     
