@@ -18,7 +18,12 @@ export default (state,action) => {
     case "SHOW_INFO":
       return {
         ...state, 
-        nominations: []
+        displayInfo: true
+      } 
+    case "HIDE_INFO":
+      return {
+        ...state, 
+        displayInfo: false
       } 
     default: 
       return state;

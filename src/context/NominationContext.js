@@ -38,6 +38,7 @@ const NominationContextProvider = (props) => {
 
   const data = {
     nominations: state.nominations,
+    displayInfo: state.displayInfo,
     addNomination,
     removeNomination,
     clearNominations,

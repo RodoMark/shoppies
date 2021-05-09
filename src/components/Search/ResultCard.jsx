@@ -4,7 +4,7 @@ import { NominationContext } from '../../context/NominationContext'
 
 
 const ResultCard = ( { movie } ) => {
-  const { nominations, displayInfo, addNomination, removeNomination, showInfo, hideInfo } = useContext(NominationContext)
+  const { nominations, displayInfo, addNomination, removeNomination, showInfo,} = useContext(NominationContext)
 
   let nominationMatch = nominations.find(mov => mov.imdbID === movie.imdbID)
 
@@ -14,7 +14,7 @@ const ResultCard = ( { movie } ) => {
 
   return (
     <article className="result-card">
-      {displayInfo && <MovieInfo movie={movie} hideInfo={hideInfo} />}
+      {displayInfo && <MovieInfo movie={movie} />}
       <div className="poster-wrapper">
         {movie.Poster ? (
           <img src={movie.Poster} alt={`${movie.Title} Poster`}></img>

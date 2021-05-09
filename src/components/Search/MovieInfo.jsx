@@ -1,4 +1,5 @@
 import React from 'react'
+import InfoControls from './InfoControls'
 
 const MovieInfo = ({ movie }) => {
   return (
@@ -20,6 +21,8 @@ const MovieInfo = ({ movie }) => {
             <p className="plot">{`Plot: ${movie.Year || 'N/A'}`}</p>
         </div>             
       </article>
+
+      <InfoControls />
     </div>
   )
 }
