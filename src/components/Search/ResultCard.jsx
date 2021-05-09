@@ -2,7 +2,9 @@ import React, {useState, useContext} from 'react'
 import MovieInfo from './MovieInfo'
 import { fetchSpecificMovie } from '../../api'
 import { NominationContext } from '../../context/NominationContext'
-import disableScroll from 'disable-scroll';
+
+// Removing disable-scroll until view-height bug can be resolved
+// import disableScroll from 'disable-scroll';
 
 
 const ResultCard = ( { movie } ) => {
@@ -16,7 +18,7 @@ const ResultCard = ( { movie } ) => {
 
   const handleClick = async () => {
     const result = await fetchSpecificMovie(movie.imdbID)
-    disableScroll.on()
+    // disableScroll.on()
     setMovie(result)
     showInfo()
     document.body.style.overflow = "initial"
@@ -38,6 +40,7 @@ const ResultCard = ( { movie } ) => {
             {movie.Title}
           </h3>
           <h4 className="year">{movie.Year ? movie.Year : 'na'}</h4>
+          <a>More Info</a>
         </div>
 
         <div className="controls">

@@ -34,6 +34,7 @@
 
 .movie-info--detailed {
   display: grid;
+  grid-gap: 0px;
   grid-template-areas: "post post head"
                        "post post head"
                        "post post body"
