@@ -9,17 +9,29 @@ const defaultQuery = {
 }
 
 export const parseQuery = (query, multiple=true) => {
-  const search = multiple ? '&s=' : '&t='  
-
-  const queryTitle = search + query.title.split(' ').join('+')
+  const search = multiple ? ('&s=' + query.title.split(' ').join('+')) : ('&i=' + query)  
+  const mediaType = mutiple ? '&type=Movie' : ''
   const queryYear = query.year ? `&y=${query.year}` : ''
-  const mediaType = '&type=Movie'
+  
 
-  return url + queryTitle + queryYear + mediaType
+  return url + search + queryYear + mediaType
 }
 
-export const fetchMovies = async (query, multiple=true) => {
-  const parsedQuery = parseQuery(query, multiple)
+export const fetchMovies = async (query) => {
+  const parsedQuery = parseQuery(query, true)
+  console.log(parsedQuery)
+
+  try {
+    const { data } = await axios.get(parsedQuery)
+    return data
+
+  } catch(error) {
+    console.log(error)
+  }
+} 
+
+export const fetchSpecificMovie = async (query) => {
+  const parsedQuery = parseQuery(query, false)
   console.log(parsedQuery)
 
   try {

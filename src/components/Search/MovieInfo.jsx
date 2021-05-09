@@ -1,9 +1,30 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import InfoControls from './InfoControls'
+import { fetchSpecificMovie } from '../../api'
 import { NominationContext } from '../../context/NominationContext'
 import HighlightOff from '@material-ui/icons/HighlightOff'
 
-const MovieInfo = ({ movie }) => {
+const MovieInfo = ({ imdbID }) => {
+  const [specificMovie, setSpecificMovie] = useState({});
+  const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    const callAPI = async () => {
+      try {
+        const result = await fetchSpecificMovie(imdbID)
+        setResults(result)
+        console.log(specificMovie)
+        setLoading(false)
+      } catch(error) {
+        setResults([{Title: 'Error', Year: 'Data Currently Unavailable'}])
+        
+      }
+      
+    }
+
+    callAPI()
+  }, [title, year])
+
   const { hideInfo } = useContext(NominationContext)
   
   console.log("MOVIE DIRECTOR:", movie.Director)

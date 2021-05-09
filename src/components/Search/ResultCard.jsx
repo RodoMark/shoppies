@@ -14,7 +14,7 @@ const ResultCard = ( { movie } ) => {
 
   return (
     <article className={`result-card movie-key-${movie.imdbID}`} >
-      {displayInfo && <MovieInfo movie={movie} />}
+      {displayInfo && <MovieInfo imdbID={movie.imdbID} />}
       <div className="poster-wrapper">
         {movie.Poster ? (
           <img src={movie.Poster} alt={`${movie.Title} Poster`}></img>
