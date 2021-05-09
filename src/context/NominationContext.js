@@ -4,6 +4,8 @@ import AppReducer from './AppReducer'
 const initialState = {
   nominations: localStorage.getItem('nominations') ? JSON.parse(localStorage.getItem('nominations')) : [],
   displayInfo: false,
+  searchID: '',
+  specificMovie: {},
 }
 
 export const NominationContext = createContext(initialState);
@@ -28,22 +30,31 @@ const NominationContextProvider = (props) => {
     dispatch({type: "CLEAR_NOMINATIONS"})
   }
 
-  const showInfo = () => {
-    dispatch({type: "SHOW_INFO"})
+  const setMovie = (movie) => {
+    dispatch({type: "SET_SPECIFIC_MOVIE", payload: movie})
+  }
+
+  const showInfo = (movie) => {
+    dispatch({type: "SHOW_INFO", payload: movie})
   }
 
   const hideInfo = () => {
     dispatch({type: "HIDE_INFO"})
   }
 
+
+
   const data = {
     nominations: state.nominations,
     displayInfo: state.displayInfo,
+    searchID: state.searchID,
+    specificMovie: state.specificMovie,
     addNomination,
     removeNomination,
     clearNominations,
     showInfo,
     hideInfo,
+    setMovie,
   }
 
   return <NominationContext.Provider value={data}>

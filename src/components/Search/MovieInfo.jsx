@@ -1,34 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react'
-import InfoControls from './InfoControls'
-import { fetchSpecificMovie } from '../../api'
 import { NominationContext } from '../../context/NominationContext'
 import HighlightOff from '@material-ui/icons/HighlightOff'
 
 const MovieInfo = ({ imdbID }) => {
-  const [specificMovie, setSpecificMovie] = useState({});
   const [loading, setLoading] = useState(false)
 
+  const { hideInfo, setMovie, specificMovie } = useContext(NominationContext)
+
   //loading single movie object via imdbID
-  useEffect(() => {
-    const callAPI = async () => {
-      try {
-        const result = await fetchSpecificMovie(imdbID)
-        setSpecificMovie(result)
-        console.log(specificMovie)
-        setLoading(false)
-      } catch(error) {
-        setSpecificMovie([{Title: 'Error', Year: 'Data Currently Unavailable'}])
-        
-      }
-      
-    }
-
-    callAPI()
-  }, [])
-
-  const { hideInfo } = useContext(NominationContext)
   
-  console.log("MOVIE DIRECTOR:", specificMovie.Director)
   return (
     <div className='overlay--movie-info'>
       <section className='splash splash--movie-info'>

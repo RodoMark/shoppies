@@ -15,15 +15,20 @@ export default (state,action) => {
         ...state, 
         nominations: []
       }
+    case "SET_SPECIFIC_MOVIE":
+      return {
+        ...state,
+        specificMovie: action.payload
+      } 
     case "SHOW_INFO":
       return {
         ...state, 
-        displayInfo: true
+        displayInfo: true,
       } 
     case "HIDE_INFO":
       return {
         ...state, 
-        displayInfo: false
+        displayInfo: false,
       } 
     default: 
       return state;

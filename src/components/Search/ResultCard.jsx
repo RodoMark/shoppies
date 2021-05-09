@@ -1,16 +1,24 @@
 import React, {useState, useContext} from 'react'
 import MovieInfo from './MovieInfo'
+import { fetchSpecificMovie } from '../../api'
 import { NominationContext } from '../../context/NominationContext'
 
 
 const ResultCard = ( { movie } ) => {
-  const { nominations, displayInfo, addNomination, removeNomination, showInfo,} = useContext(NominationContext)
+  const { nominations, displayInfo, addNomination, removeNomination, showInfo, setMovie } = useContext(NominationContext)
 
   let nominationMatch = nominations.find(mov => mov.imdbID === movie.imdbID)
 
   const nominated = nominationMatch ? true : false
 
   const clickDisabled = nominations.length >= 5 ? true : false
+
+  const handleClick = async () => {
+    const result = await fetchSpecificMovie(movie.imdbID)
+    setMovie(result)
+    showInfo()
+    document.body.style.overflow = "initial"
+  }
 
   return (
     <article className={`result-card movie-key-${movie.imdbID}`} >
@@ -22,11 +30,7 @@ const ResultCard = ( { movie } ) => {
       </div>
 
       <div className="info">
-        <div className="header" onClick={() => {
-            showInfo()
-            document.body.style.overflow = "initial"
-            }
-          }
+        <div className="header" onClick={() => handleClick()}
 >
           <h3 className="title"           >
             {movie.Title}

@@ -8,18 +8,16 @@ const defaultQuery = {
   plotLength: null
 }
 
-export const parseQuery = (query, multiple=true) => {
+export const parseQuery = (query, multiple) => {
   const search = multiple ? ('&s=' + query.title.split(' ').join('+')) : ('&i=' + query)  
   const mediaType = multiple ? '&type=Movie' : ''
   const queryYear = query.year ? `&y=${query.year}` : ''
-  
 
   return url + search + queryYear + mediaType
 }
 
 export const fetchMovies = async (query) => {
   const parsedQuery = parseQuery(query, true)
-  console.log(parsedQuery)
 
   try {
     const { data } = await axios.get(parsedQuery)
@@ -30,9 +28,8 @@ export const fetchMovies = async (query) => {
   }
 } 
 
-export const fetchSpecificMovie = async (query) => {
-  const parsedQuery = parseQuery(query, false)
-  console.log(parsedQuery)
+export const fetchSpecificMovie = async (id) => {
+  const parsedQuery = parseQuery(id, false)
 
   try {
     const { data } = await axios.get(parsedQuery)

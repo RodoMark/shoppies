@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import axios from 'axios'
-import { fetchMovies, parseQuery } from '../../api'
+import { fetchMovies } from '../../api'
 import { debounce } from 'lodash'
 
 import { TextField } from '@material-ui/core'
