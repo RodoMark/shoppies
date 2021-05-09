@@ -10,7 +10,7 @@ const defaultQuery = {
 
 export const parseQuery = (query, multiple=true) => {
   const search = multiple ? ('&s=' + query.title.split(' ').join('+')) : ('&i=' + query)  
-  const mediaType = mutiple ? '&type=Movie' : ''
+  const mediaType = multiple ? '&type=Movie' : ''
   const queryYear = query.year ? `&y=${query.year}` : ''
   
 
