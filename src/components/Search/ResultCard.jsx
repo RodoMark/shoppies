@@ -1,9 +1,12 @@
-import React, {useContext} from 'react'
+import React, {useState, useContext} from 'react'
+import MovieInfo from './MovieInfo'
 import { NominationContext } from '../../context/NominationContext'
 
 
 const ResultCard = ( { movie } ) => {
   const { nominations, addNomination, removeNomination } = useContext(NominationContext)
+
+  const [displayInfo, setDisplayInfo] = useState(false)
 
   let nominationMatch = nominations.find(mov => mov.imdbID === movie.imdbID)
 
@@ -13,6 +16,7 @@ const ResultCard = ( { movie } ) => {
 
   return (
     <article className="result-card">
+      {displayInfo && <MovieInfo movie={movie} />}
       <div className="poster-wrapper">
         {movie.Poster ? (
           <img src={movie.Poster} alt={`${movie.Title} Poster`}></img>
@@ -21,7 +25,7 @@ const ResultCard = ( { movie } ) => {
 
       <div className="info">
         <div className="header">
-          <h3 className="title">{movie.Title}</h3>
+          <h3 className="title" onClick={() => setDisplayInfo(true)}>{movie.Title}</h3>
           <h4 className="year">{movie.Year ? movie.Year : 'na'}</h4>
         </div>
 
