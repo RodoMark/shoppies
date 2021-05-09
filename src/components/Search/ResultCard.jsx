@@ -2,6 +2,7 @@ import React, {useState, useContext} from 'react'
 import MovieInfo from './MovieInfo'
 import { fetchSpecificMovie } from '../../api'
 import { NominationContext } from '../../context/NominationContext'
+import disableScroll from 'disable-scroll';
 
 
 const ResultCard = ( { movie } ) => {
@@ -15,6 +16,7 @@ const ResultCard = ( { movie } ) => {
 
   const handleClick = async () => {
     const result = await fetchSpecificMovie(movie.imdbID)
+    disableScroll.on()
     setMovie(result)
     showInfo()
     document.body.style.overflow = "initial"

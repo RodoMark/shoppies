@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { NominationContext } from '../../context/NominationContext'
 import HighlightOff from '@material-ui/icons/HighlightOff'
+import disableScroll from 'disable-scroll';
 
 const MovieInfo = ({ imdbID }) => {
   const [loading, setLoading] = useState(false)
@@ -20,6 +21,7 @@ const MovieInfo = ({ imdbID }) => {
                   className="close btn--control"
                   onClick={() => {
                     hideInfo()
+                    disableScroll.off()
                     document.body.style.overflow = "initial"
                   }
                 }
