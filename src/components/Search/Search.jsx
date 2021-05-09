@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import axios from 'axios'
-import { fetchMovies, parseQuery } from '../../api'
+import { fetchMovies } from '../../api'
 import { debounce } from 'lodash'
 
 import { TextField } from '@material-ui/core'
@@ -9,7 +8,7 @@ import Results from './Results'
 import { CircularProgress } from '@material-ui/core'
 
 const Search = () => {
-  const [title, setTitle] = useState('Harry')
+  const [title, setTitle] = useState('')
   const [year, setYear] = useState('')
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false)
@@ -21,17 +20,13 @@ const Search = () => {
         setResults(result.Search)
         console.log(results)
         setLoading(false)
+
       } catch(error) {
         setResults([{Title: 'Error', Year: 'Data Currently Unavailable'}])
-        
       }
-      
     }
-
     callAPI()
   }, [title, year])
-
-  
 
   const debounceTitle = useCallback(debounce((title) => setTitle(title), 1000), [])
 

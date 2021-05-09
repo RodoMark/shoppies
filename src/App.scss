@@ -7,19 +7,21 @@
 @import './styles/nominations.scss';
 @import './styles/nominationsSmall.scss';
 @import './styles/results.scss';
+@import './styles/movieInfo.scss';
 @import './styles/button.scss';
 
 
 body {
   font-family: "Source Sans Pro", sans-serif;
   padding: 0;
-  margin-top: calc(70px + 3vw);
+  margin-top: $bodyMargin;
   background-color: $bodyBackground;
+  overflow-x: hidden;
 }
 
 @media (max-width: $mobileWidth) {
   body{
-    margin-top: calc(120px + 6vw);
+    margin-top: $bodyMarginMobile;
   }
 }
 
@@ -34,50 +36,8 @@ body {
   box-sizing: border-box;
 }
 
-.btn {
-  padding: 10px 15px;
-  background-color: $secondary;
-  color: $primary;
-  border-radius: 5px;
-  text-transform: uppercase;
-  font-weight: 700;
-  display: inline-block;
-  border: none;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  line-height: 1.1;
-}
-
-.btn:hover {
-  background-color: #1aa762;
-  opacity: 1;
-  cursor: pointer;
-}
-
-.btn:disabled {
-  pointer-events: none;
-  opacity: 0.5;
-}
-
-input:focus {
-  outline: none;
-}
-
-/* Header Styles */
 
 
-/* Add Page */
-.add-content {
-  max-width: 600px;
-}
-
-.add-content .input-wrapper input {
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  font-size: 1.25rem;
-}
 
 
 

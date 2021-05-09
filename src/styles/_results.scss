@@ -61,6 +61,7 @@ ul.results {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 .result-card .info .title {
@@ -80,6 +81,19 @@ ul.results {
 .result-card .controls button {
   margin-right: 10px;
 }
+
+.add-content {
+  max-width: 600px;
+}
+
+.add-content .input-wrapper input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.25rem;
+}
+
 
 
 
