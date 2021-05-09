@@ -423,6 +423,7 @@ ul.results {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  cursor: pointer;
 }
 
 .result-card .info .title {
@@ -455,7 +456,7 @@ ul.results {
   font-size: 1.25rem;
 }
 
-.overlay {
+.overlay--movie-info {
   position: fixed;
   top: calc(70px + 3vw);
   left: 0;
@@ -511,6 +512,7 @@ button.MuiButtonBase-root {
 
 .btn:hover {
   background-color: #1aa762;
+  color: #F1EDEA;
   opacity: 1;
   cursor: pointer;
 }
