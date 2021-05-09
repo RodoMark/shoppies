@@ -6,13 +6,13 @@ const InfoControls = () => {
   const { hideInfo } = useContext(NominationContext)
 
   return (
-    <div className="inner-card-controls">
+    <div className="inner-info-controls">
       <>
         <button 
           className="btn--control"
           onClick={() => hideInfo()}
         >
-          <HighlightOff />
+          HIIIIDE <HighlightOff />
         </button>
       </>
     </div>

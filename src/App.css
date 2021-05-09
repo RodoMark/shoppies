@@ -158,6 +158,7 @@ section.banner.banner--danger {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    width: 100vw;
   }
 }
 
@@ -177,7 +178,7 @@ section.splash {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 10vh calc(0.5em + 3vw);
+  padding: 5vh calc(0.5em + 3vw);
   font-size: calc(0.4em + 1vw);
 }
 
@@ -442,6 +443,37 @@ ul.results {
   margin-right: 10px;
 }
 
+.add-content {
+  max-width: 600px;
+}
+
+.add-content .input-wrapper input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.25rem;
+}
+
+.overlay {
+  position: fixed;
+  top: calc(70px + 3vw);
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
+  padding-right: 15px;
+  background: #FBF7ED;
+}
+
+.splash--movie-info {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .btn--control {
   color: #FFE7AD;
   background-color: transparent;
@@ -460,31 +492,6 @@ ul.results {
 
 button.MuiButtonBase-root {
   margin-left: 1.5em;
-}
-
-body {
-  font-family: "Source Sans Pro", sans-serif;
-  padding: 0;
-  margin-top: calc(70px + 3vw);
-  background-color: #FBF7ED;
-}
-
-@media (max-width: 540px) {
-  body {
-    margin-top: calc(120px + 6vw);
-  }
-}
-
-.container {
-  padding-right: 1em;
-  padding-left: 1em;
-}
-
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
 }
 
 .btn {
@@ -517,17 +524,29 @@ input:focus {
   outline: none;
 }
 
-/* Header Styles */
-/* Add Page */
-.add-content {
-  max-width: 600px;
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  padding: 0;
+  margin-top: calc(70px + 3vw);
+  background-color: #FBF7ED;
+  overflow-x: hidden;
 }
 
-.add-content .input-wrapper input {
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  font-size: 1.25rem;
+@media (max-width: 540px) {
+  body {
+    margin-top: calc(120px + 6vw);
+  }
+}
+
+.container {
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 /*# sourceMappingURL=App.css.map */

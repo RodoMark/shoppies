@@ -13,7 +13,7 @@ const ResultCard = ( { movie } ) => {
   const clickDisabled = nominations.length >= 5 ? true : false
 
   return (
-    <article className="result-card">
+    <article className="result-card" >
       {displayInfo && <MovieInfo movie={movie} />}
       <div className="poster-wrapper">
         {movie.Poster ? (
@@ -22,8 +22,15 @@ const ResultCard = ( { movie } ) => {
       </div>
 
       <div className="info">
-        <div className="header">
-          <h3 className="title" onClick={() => showInfo()}>{movie.Title}</h3>
+        <div className="header" onClick={() => {
+            showInfo()
+            document.body.style.overflow = "initial"
+            }
+          }
+>
+          <h3 className="title"           >
+            {movie.Title}
+          </h3>
           <h4 className="year">{movie.Year ? movie.Year : 'na'}</h4>
         </div>
 
