@@ -1,6 +1,9 @@
 # Shoppies
 A film-API app that allows users to search for their favourite films and and nominate them for an award.
 
+## Hosted at
+https://shoppies-alon-codes.herokuapp.com/
+
 ### Front-End: 
 React, Reducer, Axios, react-media
 ### Testing: 
