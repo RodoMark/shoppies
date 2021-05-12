@@ -12,8 +12,10 @@ Cypress, Jest
 PostgreSQL
 
 
-!["Sign Up"](https://github.com/RodoMark/speak/blob/master/client/public/SignUp.PNG?raw=true)
+!["Search For Movies"](https://github.com/RodoMark/shoppies/blob/main/public/images/SearchMovie.PNG?raw=true)
 
-!["Create A Room"](https://github.com/RodoMark/speak/blob/master/client/public/NewRoom.PNG?raw=true)
+!["Nominate Your Favourite Films"](https://github.com/RodoMark/shoppies/blob/main/public/images/AddNominations.PNG?raw=true)
 
-!["Invite Someone To Chat"](https://github.com/RodoMark/speak/blob/master/client/public/ReceiveCall.PNG?raw=true)
+!["Mobile Menu"](https://github.com/RodoMark/shoppies/blob/main/public/images/MobileMenu.PNG?raw=true)
+
+!["Mobile Nominations Page"](https://github.com/RodoMark/shoppies/blob/main/public/images/MobileNominations.PNG?raw=true)
