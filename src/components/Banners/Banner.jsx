@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react'
+import React, {useContext} from 'react'
 import { NominationContext } from '../../context/NominationContext'
 import { useHistory } from 'react-router-dom';
 
@@ -18,11 +18,11 @@ const Banner = () => {
         {nominations.length < 5 ? `${nominations.length}/5 NOMINATED` :
         `Click here to submit` }
       </div>
-      
-      
+
+
     </section>
   )
-  
+
 }
 
 export default Banner

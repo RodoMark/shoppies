@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import axios from 'axios'
-import { fetchMovies, parseQuery } from '../../api'
+import { fetchMovies } from '../../api'
 import { debounce } from 'lodash'
 
 import { TextField } from '@material-ui/core'
@@ -10,7 +9,7 @@ import { CircularProgress } from '@material-ui/core'
 
 const Search = () => {
   const [title, setTitle] = useState('Harry')
-  const [year, setYear] = useState('')
+  const [year] = useState('')
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false)
 
@@ -23,15 +22,15 @@ const Search = () => {
         setLoading(false)
       } catch(error) {
         setResults([{Title: 'Error', Year: 'Data Currently Unavailable'}])
-        
+
       }
-      
+
     }
 
     callAPI()
   }, [title, year])
 
-  
+
 
   const debounceTitle = useCallback(debounce((title) => setTitle(title), 1000), [])
 
@@ -46,16 +45,16 @@ const Search = () => {
       <div className="container">
         <article className="add-content">
           <div className="input-wrapper">
-            <TextField 
+            <TextField
               onChange={(event) => handleChange(event)}
-              id="film-search" 
+              id="film-search"
               placeholder="Search"
-              type="search" 
+              type="search"
             />
           </div>
-          
-          {loading ? <CircularProgress /> : <Results results={results} />} 
-          
+
+          {loading ? <CircularProgress /> : <Results results={results} />}
+
         </article>
       </div>
     </section>

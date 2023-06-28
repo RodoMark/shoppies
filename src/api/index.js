@@ -2,12 +2,6 @@ import axios from 'axios'
 
 const url = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}`
 
-const defaultQuery = {
-  title: 'Star Wars',
-  year: null,
-  plotLength: null
-}
-
 export const parseQuery = (query) => {
 
   const queryTitle = '&s=' + query.title.split(' ').join('+')
@@ -27,7 +21,7 @@ export const fetchMovies = async (query) => {
   } catch(error) {
     console.log(error)
   }
-} 
+}
 
 
 export const generateID = () => {

@@ -1,5 +1,5 @@
 import './App.scss';
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Header from './components/Nav/Header'
@@ -9,14 +9,11 @@ import NominationsSmall from './components/Nominations/NominationsSmall'
 import Submit from './components/Nominations/Submit'
 import Search from './components/Search/Search'
 
-import useMedia from 'react-media';
 import NominationContextProvider from './context/NominationContext';
 
 
 
 function App() {
-
-  const isSmallScreen = useMedia({ query: "(max-width: 770px)" });
 
   return (
         <NominationContextProvider>
@@ -35,13 +32,13 @@ function App() {
               <Route path="/search">
                 <div id="stage">
                   <Search />
-                  <NominationsSmall/>
+                  <NominationsSmall />
                 </div>
               </Route>
 
               <Route path="/submit">
                 <Submit />
-              </Route>              
+              </Route>
             </Switch>
           </Router>
         </NominationContextProvider>
