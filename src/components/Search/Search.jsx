@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React, { useState, useEffect, useCallback } from 'react'
 import { fetchMovies } from '../../api'
 import { debounce } from 'lodash'
