@@ -14,6 +14,7 @@ const Search = () => {
   const [year] = useState('')
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
 
   useEffect(() => {
     const callAPI = async () => {
@@ -23,10 +24,8 @@ const Search = () => {
         console.log(results)
         setLoading(false)
       } catch(error) {
-        setResults([{Title: 'Error', Year: 'Data Currently Unavailable'}])
-
+        setError(true)
       }
-
     }
 
     callAPI()
@@ -37,6 +36,7 @@ const Search = () => {
   const debounceTitle = useCallback(debounce((title) => setTitle(title), 1000), [])
 
   const handleChange = (event) => {
+    setError(false)
     setLoading(true)
     const title = event.target.value
     debounceTitle(title)
@@ -54,8 +54,8 @@ const Search = () => {
               type="search"
             />
           </div>
-
-          {loading ? <CircularProgress /> : <Results results={results} />}
+          {error && <p className="error-text">There was an server error, please try again later.</p>}
+          {(loading && !error) ? <CircularProgress /> : <Results results={results} />}
 
         </article>
       </div>
